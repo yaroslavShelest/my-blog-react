@@ -56,6 +56,7 @@ export default function MySkills(props) {
               {post.linkText}
             </Link>
           </div>
+
         </Grid>
       </Grid>
     </Paper>
