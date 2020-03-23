@@ -1,11 +1,12 @@
 import React from 'react';
-import MySkillsContainer from './Containers/MySkillsContainer';
+import AboutMeContainer from './Containers/AboutMeContainer';
 import MainPageContainer from './Containers/MainPageContainer';
+import UsefullLinksContainer from './Containers/UsefullLinksContainer';
 import { Route, Switch, Redirect } from 'react-router-dom';
 
 
 
-const mainFeaturedPost = {
+const mainFeaturedPost = {        // its should delete soon or will delivered in BLL
     title: 'Title of a longer featured blog post',
     description:
       "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
@@ -22,10 +23,11 @@ function Routes() {
     return (
         <Switch>
             <Route exact path='/' render={() => <Redirect to={"/main"} />} />
-            <Route path='/skills' render={() => <MySkillsContainer post={mainFeaturedPost} />} />
+            <Route path='/aboutme' render={() => <AboutMeContainer post={mainFeaturedPost} />} />
             <Route exact path='/main' render={() => <MainPageContainer />} />
-            <Route path='/facebook' render={() => <div>Facebook</div>} />
-            <Route path='/login' render={() => <div>login</div>} />
+            <Route path='/usefull' render={() => <UsefullLinksContainer />} />
+            <Route path='/feedback' render={() => <div>FeeedBackContainer will be here soon</div>} />
+            <Route path='/rest' render={() => <div>TakeRestContainer will be here soon</div>} />
             <Route path='*' render={() => <div>404 NOT FOUND</div>} />
         </Switch>
 
