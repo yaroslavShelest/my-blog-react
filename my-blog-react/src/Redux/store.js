@@ -1,9 +1,10 @@
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import thunkMiddleware from 'redux-thunk';
 import logger from 'redux-logger';
-
+import menuSectionReducer from './Reducers/MenuSection-reducer'
 
 let reducers = combineReducers({
+    menuSection: menuSectionReducer
     // mainPage: mainPageReducer,
     // articlesPage: articleReducer,
     // auth: authReducer,

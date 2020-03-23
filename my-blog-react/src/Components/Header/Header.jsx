@@ -3,7 +3,7 @@ import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
-import Anchor from "./Common/Anchor";
+import Anchor from "../Common/Anchor";
 import HeaderTopMenu from "./HeaderTopMenu";
 import Typography from '@material-ui/core/Typography';
 

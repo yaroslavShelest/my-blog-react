@@ -7,13 +7,13 @@ import HeaderContainer from './Containers/HeaderContainer';
 import FooterContainer from './Containers/FooterContainer';
 
 
-const sections = [
-  { title: 'About me', url: '/skills' },
-  { title: 'Articles', url: 'main' },
-  { title: 'Usefull links', url: '/123' },
-  { title: 'Feed back', url: '#' },
-  { title: 'Just take a rest', url: '#' },
-];
+// const sections = [
+//   { title: 'About me', url: '/skills' },
+//   { title: 'Articles', url: 'main' },
+//   { title: 'Usefull links', url: '/123' },
+//   { title: 'Feed back', url: '#' },
+//   { title: 'Just take a rest', url: '#' },
+// ];
 
 
 
@@ -28,7 +28,7 @@ function App() {
     <React.Fragment>
       <CssBaseline />
       <Container maxWidth="lg">
-        <HeaderContainer title="Blog" sections={sections} />
+        <HeaderContainer />
 
         <Box my={2} >
         <main>

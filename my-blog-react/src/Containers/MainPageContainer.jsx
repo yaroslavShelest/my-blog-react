@@ -1,5 +1,5 @@
 import React from "react";
-import MainPage from "./../Components/MainPage";
+import MainPage from "./../Components/MainPage/MainPage";
 import { connect } from "react-redux";
 
 class MainPageContainer extends React.Component {

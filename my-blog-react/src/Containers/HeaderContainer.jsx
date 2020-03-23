@@ -1,5 +1,5 @@
 import React from "react";
-import Header from "./../Components/Header";
+import Header from "./../Components/Header/Header";
 import { connect } from "react-redux";
 
 class HeaderContainer extends React.Component {
@@ -9,4 +9,9 @@ class HeaderContainer extends React.Component {
   }
 }
 
-export default connect(null, {})(HeaderContainer);
+const mapStateToProps = (state) => ({
+  sections: state.menuSection.sections,
+});
+
+
+export default connect(mapStateToProps, {})(HeaderContainer);
