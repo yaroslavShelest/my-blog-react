@@ -70,15 +70,17 @@ export default function HeaderTopMenu({sections}) {
     >
       <List>
         <Grid container direction="row" justify="space-around" alignItems="center">
-        {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+        {sections.map((section, index) => (
           <Grid item xs={2}>
           <ListItem 
+          component={NavLink}
+          to={section.url}
           button
-          key={text}>
+          key={section.title}>
             <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
             </ListItemIcon>
-            <ListItemText  primary={text} />
+            <ListItemText  primary={section.title} />
           </ListItem>
           </Grid>
         ))}
