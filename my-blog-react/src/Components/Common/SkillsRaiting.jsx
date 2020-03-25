@@ -30,7 +30,7 @@ export default function SkillsRaiting({ skills }) {
         <Grid item xs={9} sm={6} md={2}>
           <Box component="fieldset" mb={1} borderColor="transparent">
             <Typography component="legend">{skill.title}</Typography>
-            <Slide direction="left" in={true} mountOnEnter unmountOnExit >
+            <Slide direction="dawn" in={true} mountOnEnter unmountOnExit >
             <Rating
               readOnly
               name="customized-10"
