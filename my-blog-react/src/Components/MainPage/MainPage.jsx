@@ -1,27 +1,91 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
+import Container from "@material-ui/core/Container";
+import Box from "@material-ui/core/Box";
+import { lighten, makeStyles, withStyles } from "@material-ui/core/styles";
+import LinearProgress from "@material-ui/core/LinearProgress";
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
     marginTop: theme.spacing(3)
-  }
+  },
+  root: {
+    flexGrow: 1,
+  },
+  margin: {
+    display: "inline-block",
+    margin: theme.spacing(1),
+    width: "200px"
+  },
 }));
+
+const ColorLinearProgress = withStyles({
+  colorPrimary: {
+    backgroundColor: "#b2dfdb"
+  },
+  barColorPrimary: {
+    backgroundColor: "#00695c"
+  }
+})(LinearProgress);
+
+const BorderLinearProgress = withStyles({
+  root: {
+    height: 10,
+    backgroundColor: lighten("#ff6c5c", 0.5)
+  },
+  bar: {
+    borderRadius: 20,
+    backgroundColor: "#ff6c5c"
+  }
+})(LinearProgress);
 
 export default function MySkills(props) {
   const classes = useStyles();
 
   return (
     <Grid container direction="column" spacing={5} className={classes.mainGrid}>
+      <Grid item>
+        <Container>
+          <Grid container direction="column">
+            <Grid item>
+              <Box my={1}>
+                <BorderLinearProgress
+                  className={classes.margin}
+                  variant="determinate"
+                  color="secondary"
+                  value={50}
+                /> asdasd
+              </Box>
+            </Grid>
+            <Grid item>
+              <Box my={1}>
+                <BorderLinearProgress
+                  className={classes.margin}
+                  variant="determinate"
+                  color="secondary"
+                  value={30}
+                /> SSs
+              </Box>
+            </Grid>
+          </Grid>
+        </Container>
+      </Grid>
 
-   <Grid item > <p>ProgressBarContainer will be here soon </p> </Grid>
-   <Grid item > <p>MyStoryContainer will be here soon </p> </Grid>
-   <Grid item > <p>MyProjectsContainer will be here soon </p> </Grid>
-   <Grid item > <p>SmallArticlesContainer will be here soon </p> </Grid>
+      <Grid item>
+        <p>MyStoryContainer will be here soon </p>{" "}
 
+      
+
+      </Grid>
+      <Grid item>
+        <p>MyProjectsContainer will be here soon </p>{" "}
+      </Grid>
+      <Grid item>
+        <p>SmallArticlesContainer will be here soon </p>{" "}
+      </Grid>
 
       {/* <ProgressBarContainer /> */}
-      {/* <MyStoryContainer /> */}  
+      {/* <MyStoryContainer /> */}
       {/* <MyProjectsContainer /> */}
       {/* <SmallArticlesContainer /> */}
     </Grid>
