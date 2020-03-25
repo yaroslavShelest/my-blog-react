@@ -69,9 +69,9 @@ export default function HeaderTopMenu({sections}) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <Grid container direction="row" justify="space-around" alignItems="center">
+        <Grid container direction="row"  alignItems="center">
         {sections.map((section, index) => (
-          <Grid item xs={2}>
+          <Grid item xs={9} sm={6} md={2}>
           <ListItem 
           component={NavLink}
           to={section.url}
