@@ -19,14 +19,14 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-const ColorLinearProgress = withStyles({
-  colorPrimary: {
-    backgroundColor: "#b2dfdb"
-  },
-  barColorPrimary: {
-    backgroundColor: "#00695c"
-  }
-})(LinearProgress);
+// const ColorLinearProgress = withStyles({
+//   colorPrimary: {
+//     backgroundColor: "#b2dfdb"
+//   },
+//   barColorPrimary: {
+//     backgroundColor: "#00695c"
+//   }
+// })(LinearProgress);
 
 const BorderLinearProgress = withStyles({
   root: {
@@ -41,6 +41,11 @@ const BorderLinearProgress = withStyles({
 
 export default function MySkills(props) {
   const classes = useStyles();
+
+
+  
+  
+  
 
   return (
     <Grid container direction="column" spacing={5} className={classes.mainGrid}>
@@ -73,9 +78,6 @@ export default function MySkills(props) {
 
       <Grid item>
         <p>MyStoryContainer will be here soon </p>{" "}
-
-      
-
       </Grid>
       <Grid item>
         <p>MyProjectsContainer will be here soon </p>{" "}
