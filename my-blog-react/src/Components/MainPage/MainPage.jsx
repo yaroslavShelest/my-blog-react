@@ -4,20 +4,34 @@ import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import { lighten, makeStyles, withStyles } from "@material-ui/core/styles";
 import LinearProgress from "@material-ui/core/LinearProgress";
+import Rating from '@material-ui/lab/Rating';
+import Typography from '@material-ui/core/Typography';
+import SkillsRaiting from './../Common/SkillsRaiting';
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
     marginTop: theme.spacing(3)
   },
   root: {
-    flexGrow: 1,
+    flexGrow: 1
   },
   margin: {
     display: "inline-block",
     margin: theme.spacing(1),
     width: "200px"
-  },
+  }
 }));
+
+
+
+
+let skills = [
+  { title: 'HTML', value: 40 },
+  { title: 'CSS', value: 60 },
+  { title: 'JS', value: 70 },
+  { title: 'React', value: 50 },
+  { title: 'Redux', value: 80 },
+];
 
 // const ColorLinearProgress = withStyles({
 //   colorPrimary: {
@@ -42,39 +56,9 @@ const BorderLinearProgress = withStyles({
 export default function MySkills(props) {
   const classes = useStyles();
 
-
-  
-  
-  
-
   return (
     <Grid container direction="column" spacing={5} className={classes.mainGrid}>
-      <Grid item>
-        <Container>
-          <Grid container direction="column">
-            <Grid item>
-              <Box my={1}>
-                <BorderLinearProgress
-                  className={classes.margin}
-                  variant="determinate"
-                  color="secondary"
-                  value={50}
-                /> asdasd
-              </Box>
-            </Grid>
-            <Grid item>
-              <Box my={1}>
-                <BorderLinearProgress
-                  className={classes.margin}
-                  variant="determinate"
-                  color="secondary"
-                  value={30}
-                /> SSs
-              </Box>
-            </Grid>
-          </Grid>
-        </Container>
-      </Grid>
+      <SkillsRaiting skills={skills}/>
 
       <Grid item>
         <p>MyStoryContainer will be here soon </p>{" "}
