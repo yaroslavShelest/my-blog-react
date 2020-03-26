@@ -4,9 +4,10 @@ import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import { lighten, makeStyles, withStyles } from "@material-ui/core/styles";
 import LinearProgress from "@material-ui/core/LinearProgress";
-import Rating from '@material-ui/lab/Rating';
 import Typography from '@material-ui/core/Typography';
-import SkillsRaiting from './../Common/SkillsRaiting';
+import SkillsRaitingContainer from './../../Containers/SkillsRaitingContainer';
+import FewInfoAboutMeContainer from './../../Containers/FewInfoAboutMeContainer';
+import styles from './../../App.scss';
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
@@ -24,14 +25,6 @@ const useStyles = makeStyles(theme => ({
 
 
 
-
-let skills = [
-  { title: 'HTML', value: 40 },
-  { title: 'CSS', value: 60 },
-  { title: 'JS', value: 70 },
-  { title: 'React', value: 50 },
-  { title: 'Redux', value: 80 },
-];
 
 // const ColorLinearProgress = withStyles({
 //   colorPrimary: {
@@ -58,10 +51,11 @@ export default function MySkills(props) {
 
   return (
     <Grid container direction="column" spacing={5} className={classes.mainGrid}>
-      <SkillsRaiting skills={skills}/>
-
       <Grid item>
-        <p>MyStoryContainer will be here soon </p>{" "}
+        <FewInfoAboutMeContainer />
+      </Grid>
+      <Grid item>
+        <SkillsRaitingContainer  />
       </Grid>
       <Grid item>
         <p>MyProjectsContainer will be here soon </p>{" "}
@@ -70,7 +64,6 @@ export default function MySkills(props) {
         <p>SmallArticlesContainer will be here soon </p>{" "}
       </Grid>
 
-      {/* <ProgressBarContainer /> */}
       {/* <MyStoryContainer /> */}
       {/* <MyProjectsContainer /> */}
       {/* <SmallArticlesContainer /> */}

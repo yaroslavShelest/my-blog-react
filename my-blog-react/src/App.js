@@ -7,21 +7,7 @@ import HeaderContainer from './Containers/HeaderContainer';
 import FooterContainer from './Containers/FooterContainer';
 
 
-// const sections = [
-//   { title: 'About me', url: '/skills' },
-//   { title: 'Articles', url: 'main' },
-//   { title: 'Usefull links', url: '/123' },
-//   { title: 'Feed back', url: '#' },
-//   { title: 'Just take a rest', url: '#' },
-// ];
-
-
-
-
-
 function App() {
-
-
 
   return (
 

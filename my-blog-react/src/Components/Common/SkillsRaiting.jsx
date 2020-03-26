@@ -6,7 +6,7 @@ import { lighten, makeStyles, withStyles } from "@material-ui/core/styles";
 import Rating from "@material-ui/lab/Rating";
 import Typography from "@material-ui/core/Typography";
 import Slide from '@material-ui/core/Slide';
-
+import Paper from "@material-ui/core/Paper";
 
 
 const StyledRating = withStyles({
@@ -25,9 +25,10 @@ export default function SkillsRaiting({ skills }) {
   // const classes = useStyles();
 
   return (
-    <Grid container direction="column" >
+    <Grid container direction="row" spacing={4}>
       {skills.map((skill, index) => (
-        <Grid item xs={9} sm={6} md={2}>
+        <Grid item xs={9} sm={3} md={6} >
+        <Paper>
           <Box component="fieldset" mb={1} borderColor="transparent">
             <Typography component="legend">{skill.title}</Typography>
             <Slide direction="dawn" in={true} mountOnEnter unmountOnExit >
@@ -40,6 +41,7 @@ export default function SkillsRaiting({ skills }) {
             />
             </Slide>
           </Box>
+        </Paper>
         </Grid>
       ))}
     </Grid>
