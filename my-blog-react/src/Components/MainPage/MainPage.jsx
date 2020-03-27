@@ -7,6 +7,7 @@ import LinearProgress from "@material-ui/core/LinearProgress";
 import Typography from '@material-ui/core/Typography';
 import SkillsRaitingContainer from './../../Containers/SkillsRaitingContainer';
 import FewInfoAboutMeContainer from './../../Containers/FewInfoAboutMeContainer';
+import MyProjectsContainer from './../../Containers/MyProjectsContainer';
 import styles from './../../App.scss';
 
 const useStyles = makeStyles(theme => ({
@@ -23,17 +24,6 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-
-
-
-// const ColorLinearProgress = withStyles({
-//   colorPrimary: {
-//     backgroundColor: "#b2dfdb"
-//   },
-//   barColorPrimary: {
-//     backgroundColor: "#00695c"
-//   }
-// })(LinearProgress);
 
 const BorderLinearProgress = withStyles({
   root: {
@@ -58,13 +48,15 @@ export default function MySkills(props) {
         <SkillsRaitingContainer  />
       </Grid>
       <Grid item>
-        <p>MyProjectsContainer will be here soon </p>{" "}
+
+
+        
+        <MyProjectsContainer />
       </Grid>
       <Grid item>
         <p>SmallArticlesContainer will be here soon </p>{" "}
       </Grid>
 
-      {/* <MyStoryContainer /> */}
       {/* <MyProjectsContainer /> */}
       {/* <SmallArticlesContainer /> */}
     </Grid>
