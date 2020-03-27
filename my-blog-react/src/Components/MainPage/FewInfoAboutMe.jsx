@@ -14,7 +14,6 @@ import image from "./../../assets/myFotos/Cool.jpg";
 
 const useStyles = makeStyles(theme => ({
   paper: {
-    maxWidth: 1200,
     margin: `${theme.spacing(1)}px auto`,
     padding: theme.spacing(2)
   },

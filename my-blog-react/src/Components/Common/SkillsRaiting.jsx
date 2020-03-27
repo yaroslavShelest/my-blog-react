@@ -27,7 +27,7 @@ export default function SkillsRaiting({ skills }) {
   return (
     <Grid container direction="row" spacing={4}>
       {skills.map((skill, index) => (
-        <Grid item xs={9} sm={3} md={6} >
+        <Grid item xs={3} sm={3} md={3} >
         <Paper>
           <Box component="fieldset" mb={1} borderColor="transparent">
             <Typography component="legend">{skill.title}</Typography>
