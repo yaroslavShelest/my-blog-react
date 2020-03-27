@@ -10,7 +10,7 @@ const initialState = {
           { name: 'Telegram bot', description: "a very cool bot", githubUrl: "", image: telegramBot},
           { name: 'SocialNetwork', description: "a very cool bot", githubUrl: "", image: socialNetwork},
           { name: 'Book store', description: "a very cool bot", githubUrl: "", image: socialNetwork },
-          { name: 'LandingPage', description: "a very cool bot", githubUrl: "", image: landing },
+          { name: 'LandingPage', description: "a very cool bot ", githubUrl: "", image: landing },
         ],
 };
 
