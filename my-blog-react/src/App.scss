@@ -1,3 +1,13 @@
+.mainBackground {  // Ярик настрой ебаную картинку или гифку тут плз(паралакс вроде работает)
+  background-image: url(./assets/backgrounds/forrestMeddle.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100%;
+}
+
+
 .skill-card {
   padding: 20px;
   width: 15em;

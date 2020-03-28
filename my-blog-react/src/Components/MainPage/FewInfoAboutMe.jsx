@@ -45,7 +45,7 @@ export default function FewInfoAboutMe({ aboutMeFew, aboutMeDescription, hasFind
 
   return (
     <Slide direction="dawn" in={true} mountOnEnter unmountOnExit>
-      <Paper className={classes.paper} >
+      <section className={classes.paper} >
       <Typography variant="h4" className={classes.hello}>{aboutMeFew}</Typography>
       <Divider />
         <Grid container direction="row" className={classes.gridContainer}  >
@@ -62,7 +62,7 @@ export default function FewInfoAboutMe({ aboutMeFew, aboutMeDescription, hasFind
             </Box>
           </Grid>
         </Grid>
-      </Paper>
+      </section>
    </Slide>
   );
 }
