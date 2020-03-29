@@ -1,10 +1,14 @@
 import { createStore, combineReducers, compose, applyMiddleware } from "redux";
 import thunkMiddleware from 'redux-thunk';
 import logger from 'redux-logger';
-import menuSectionReducer from './Reducers/MenuSection-reducer'
+import menuSectionReducer from './Reducers/MenuSection-reducer';
+import aboutMeReducer from './Reducers/AboutMe-reducer';
+import myProjectsReducer from './Reducers/MyProjects-reducer';
 
 let reducers = combineReducers({
-    menuSection: menuSectionReducer
+    menuSection: menuSectionReducer,
+    aboutMe: aboutMeReducer,
+    myProjects: myProjectsReducer,
     // mainPage: mainPageReducer,
     // articlesPage: articleReducer,
     // auth: authReducer,

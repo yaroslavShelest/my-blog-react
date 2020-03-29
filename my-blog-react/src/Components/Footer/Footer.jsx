@@ -22,6 +22,7 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: "#3f51b5",
     marginTop: theme.spacing(8),
     padding: theme.spacing(6, 0),
+    // тут прижать футер
   },
 }));
 
@@ -31,7 +32,7 @@ export default function Footer(props) {
 
   return (
     <footer className={classes.footer}>
-      <Container maxWidth="lg">
+      <Container maxWidth="lg" >
         <Typography variant="h6" align="center" gutterBottom>
           {title}
         </Typography>
