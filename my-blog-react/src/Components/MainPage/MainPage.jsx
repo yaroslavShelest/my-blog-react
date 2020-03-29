@@ -37,7 +37,7 @@ const BorderLinearProgress = withStyles({
   }
 })(LinearProgress);
 
-export default function MySkills(props) {
+export default function MainPage(props) {
   const classes = useStyles();
 
   return (
