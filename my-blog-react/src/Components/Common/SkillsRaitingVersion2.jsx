@@ -13,7 +13,7 @@ import Grid from "@material-ui/core/Grid";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import styles from './../../App.scss';
-import Landing from './../../assets/myFotos/Landing.png';
+import Landing from './../../Assets/myFotos/Landing.png';
 
 
 const muiBaseTheme = createMuiTheme();

@@ -8,7 +8,6 @@ import Typography from '@material-ui/core/Typography';
 import SkillsRaitingContainer from './../../Containers/SkillsRaitingContainer';
 import FewInfoAboutMeContainer from './../../Containers/FewInfoAboutMeContainer';
 import MyProjectsContainer from './../../Containers/MyProjectsContainer';
-import SkillsRaitingVersion2 from './../Common/SkillsRaitingVersion2';
 import styles from './../../App.scss';
 
 const useStyles = makeStyles(theme => ({
@@ -55,7 +54,6 @@ export default function MainPage(props) {
         <MyProjectsContainer />
       </Grid>
       <Grid item>
-        <SkillsRaitingVersion2 />
         <p>SmallArticlesContainer will be here soon </p>{" "}
       </Grid>
 

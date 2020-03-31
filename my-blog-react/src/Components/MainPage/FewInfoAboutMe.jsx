@@ -8,7 +8,7 @@ import Rating from "@material-ui/lab/Rating";
 import Typography from "@material-ui/core/Typography";
 import Slide from "@material-ui/core/Slide";
 import Paper from "@material-ui/core/Paper";
-import image from "./../../assets/myFotos/Cool.jpg";
+import image from "./../../Assets/myFotos/Cool.jpg";
 
 
 

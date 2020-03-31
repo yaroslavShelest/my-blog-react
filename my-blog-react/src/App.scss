@@ -1,10 +1,13 @@
-.mainBackground {  // Ярик настрой ебаную картинку или гифку тут плз(паралакс вроде работает)
-  background-image: url(./assets/backgrounds/forrestMeddle.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
+.mainBackground {  
+  // background-image: url(./Assets/backgrounds/forrestMeddle.jpg);
+  // background-repeat: no-repeat;
+  // background-position: center center;
+  background: #000 url(./Assets/backgrounds/slow.gif) 
+  no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
   height: 100%;
+  color: white;  // неправильно
 }
 
 
