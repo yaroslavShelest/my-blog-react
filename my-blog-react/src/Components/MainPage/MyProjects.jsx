@@ -17,7 +17,7 @@ import Typography from "@material-ui/core/Typography";
 const muiBaseTheme = createMuiTheme();
 
 
-const theme = {
+const themeMyProjects = {
   overrides: {
     MuiCard: {
       root: {
@@ -30,7 +30,10 @@ const theme = {
             boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)",
           },
           "& .MuiCardMedia-root": {
-            paddingTop: "56.25%"
+            paddingTop: "56.25%",
+          },
+          "& .imageProsto": {
+            paddingTop: "56.25%",
           },
           "& .MuiCardContent-root": {
             textAlign: "left",
@@ -60,7 +63,7 @@ const theme = {
 
 export default function MyProjects({projects}) {
   return (
-      <MuiThemeProvider theme={createMuiTheme(theme)}>
+      <MuiThemeProvider theme={createMuiTheme(themeMyProjects)}>
         <Grid container direction="row" spacing={4} justify="space-evenly">
           {projects.map((project, index) => (
           <Grid item>
@@ -70,7 +73,7 @@ export default function MyProjects({projects}) {
             <CardMedia
               image={
                 project.image
-              }
+              } className={"imageProsto"}
             />
             <CardContent>
               <Typography

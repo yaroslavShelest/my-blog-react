@@ -8,7 +8,7 @@ const initialState = {
           { title:'Git, Jira',value: 75, description: "Set up a repository for team work" },
           { title:'Languages',value: 55, description: "Eanglish pre-intermidiate" },
         ],
-        aboutMeFew: "I'm Front End developer, wellcome to my App",
+        aboutMeFew: "wellcome to starblog",
         aboutMeDescription: "I'm enjoing to develop on 1C and keen on php, I hope wordpress will save our world and opencart didn't try to complain about it state of assotiation. I have 3 yeas and a long dick to fucking sales managers",
         hasFindWork: true,
 };

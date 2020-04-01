@@ -6,7 +6,7 @@ import Routes from './routes';
 import { lighten, makeStyles, withStyles } from "@material-ui/core/styles";
 import HeaderContainer from './Containers/HeaderContainer';
 import FooterContainer from './Containers/FooterContainer';
-
+import {withGlobalFont} from './hoc/withGlobalFont';
 
 
 function App() {
@@ -15,7 +15,6 @@ function App() {
   return (
 
     <React.Fragment>
-      <CssBaseline />
       <Box className={"mainBackground"}>
       <Container maxWidth="lg"  >
         <HeaderContainer/>
@@ -34,4 +33,4 @@ function App() {
   );
 }
 
-export default App;
+export default withGlobalFont(App);
