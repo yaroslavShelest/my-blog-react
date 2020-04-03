@@ -1,6 +1,6 @@
-import landing from './../../assets/myFotos/Landing.png';
-import socialNetwork from './../../assets/myFotos/socialNetwork.jpg';
-import telegramBot from './../../assets/myFotos/telegramBot.png';
+import landing from './../../Assets/myFotos/Landing.png';
+import socialNetwork from './../../Assets/myFotos/socialNetwork.jpg';
+import telegramBot from './../../Assets/myFotos/telegramBot.png';
 
 const SOME_ACTION_TYPE = 'SOME_ACTION_TYPE';
 

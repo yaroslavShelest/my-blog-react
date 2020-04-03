@@ -8,7 +8,7 @@ import Rating from "@material-ui/lab/Rating";
 import Typography from "@material-ui/core/Typography";
 import Slide from "@material-ui/core/Slide";
 import Paper from "@material-ui/core/Paper";
-import image from "./../../assets/myFotos/Cool.jpg";
+import image from "./../../Assets/myFotos/Cool.jpg";
 
 
 
@@ -33,7 +33,43 @@ const useStyles = makeStyles(theme => ({
   },
   hello: {
     textAlign: "center" ,
-    margin: "10px 0"
+    margin: "10px 0",
+    textTransform: "uppercase",
+    letterSpacing: "4px",
+    color: "black",
+    fontWeight: "bold",
+    textShadow: `-2px   -2px yellow,
+                                 -2px -1.5px yellow,
+                                 -2px   -1px yellow,
+                                 -2px -0.5px yellow,
+                                 -2px    0px yellow,
+                                 -2px  0.5px yellow,
+                                 -2px    1px yellow,
+                                 -2px  1.5px yellow,
+                                 -2px    2px yellow,
+                               -1.5px    2px yellow,
+                                 -1px    2px yellow,
+                               -0.5px    2px yellow,
+                                  0px    2px yellow,
+                                0.5px    2px yellow,
+                                  1px    2px yellow,
+                                1.5px    2px yellow,
+                                  2px    2px yellow,
+                                  2px  1.5px yellow,
+                                  2px    1px yellow,
+                                  2px  0.5px yellow,
+                                  2px    0px yellow,
+                                  2px -0.5px yellow,
+                                  2px   -1px yellow,
+                                  2px -1.5px yellow,
+                                  2px   -2px yellow,
+                                1.5px   -2px yellow,
+                                  1px   -2px yellow,
+                                0.5px   -2px yellow,
+                                  0px   -2px yellow,
+                               -0.5px   -2px yellow,
+                                 -1px   -2px yellow,
+                               -1.5px   -2px yellow;`
   },
   gridContainer: {
     flexWrap: "nowrap"
@@ -52,7 +88,7 @@ export default function FewInfoAboutMe({ aboutMeFew, aboutMeDescription, hasFind
           <Grid item >
             <Box className={classes.mainPhotoContainer} >
               <div className="animation-target" >
-            <img src={image} className={classes.mainPhoto} />
+            <img src={image} alt={"404"} className={classes.mainPhoto} />
             </div>
             </Box>
           </Grid>
