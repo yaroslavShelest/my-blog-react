@@ -4,6 +4,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
+import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import Slide from '@material-ui/core/Slide';
 import Anchor from "../Common/Anchor";
 import HeaderTopMenu from "./HeaderTopMenu";
 import Typography from '@material-ui/core/Typography';
@@ -30,7 +32,7 @@ export default function Header(props) {
   return (
     <React.Fragment>
       <CssBaseline />
-
+      <HideOnScroll {...props}>
       <AppBar className={classes.headerBackground}>
         <Toolbar>
           <Grid container direction="row" justify="space-between" alignItems="center">
@@ -49,8 +51,26 @@ export default function Header(props) {
           </Grid>
         </Toolbar>
       </AppBar>
-
+      </HideOnScroll>
       <Anchor />
     </React.Fragment>
+  );
+}
+
+
+
+
+
+function HideOnScroll(props) {
+  const { children, window } = props;
+  // Note that you normally won't need to set the window ref as useScrollTrigger
+  // will default to window.
+  // This is only being set here because the demo is in an iframe.
+  const trigger = useScrollTrigger({ target: window ? window() : undefined });
+
+  return (
+    <Slide appear={false} direction="down" in={!trigger}>
+      {children}
+    </Slide>
   );
 }
