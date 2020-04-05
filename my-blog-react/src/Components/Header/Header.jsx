@@ -23,7 +23,7 @@ const useStyles = makeStyles(theme => ({
     maxHeight: "40px",
     borderRadius: "50%"
   }
-}))
+}));
 
 
 export default function Header(props) {
@@ -45,7 +45,7 @@ export default function Header(props) {
             <Grid item xs={5} >
               <Grid container direction="row" alignItems="center" justify="flex-end">
               <HeaderTopMenu {...props}/>
-              <img src={logo} className={classes.mainLogo} />
+              <img src={logo} alt={"404"} className={classes.mainLogo} />
               </Grid>
             </Grid>
           </Grid>

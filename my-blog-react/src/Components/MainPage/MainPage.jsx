@@ -9,6 +9,7 @@ import Paper from "@material-ui/core/Paper";
 import SkillsRaitingContainer from './../../Containers/SkillsRaitingContainer';
 import FewInfoAboutMeContainer from './../../Containers/FewInfoAboutMeContainer';
 import MyProjectsContainer from './../../Containers/MyProjectsContainer';
+import WellcomeSection from "./WellcomeSection";
 import styles from './../../App.scss';
 
 const useStyles = makeStyles(theme => ({
@@ -44,7 +45,7 @@ export default function MainPage(props) {
   return (
     <Box>
       <Grid>
-          {/* <WellComeContainer/> */}
+        <WellcomeSection />
       </Grid>
     <Grid container direction="column" spacing={5} className={classes.mainGrid}>
       <Grid item>
