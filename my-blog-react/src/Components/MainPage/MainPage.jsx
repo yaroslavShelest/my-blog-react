@@ -10,6 +10,7 @@ import SkillsRaitingContainer from './../../Containers/SkillsRaitingContainer';
 import FewInfoAboutMeContainer from './../../Containers/FewInfoAboutMeContainer';
 import MyProjectsContainer from './../../Containers/MyProjectsContainer';
 import WellcomeSection from "./WellcomeSection";
+import HeadlineSection from "./../Common/HeadlineSection";
 import styles from './../../App.scss';
 
 const useStyles = makeStyles(theme => ({
@@ -49,19 +50,23 @@ export default function MainPage(props) {
       </Grid>
     <Grid container direction="column" spacing={5} className={classes.mainGrid}>
       <Grid item>
+        <HeadlineSection headlineText={"Few info about me"}/>
+      </Grid>
+      <Grid item>
         <FewInfoAboutMeContainer />
+      </Grid>
+      <Grid item>
+        <HeadlineSection headlineText={"My skills"}/>
       </Grid>
       <Grid item>
         <SkillsRaitingContainer  />
       </Grid>
       <Grid item>
-        <MyProjectsContainer />
+        <HeadlineSection headlineText={"My projects"}/>
       </Grid>
       <Grid item>
-        <p>SmallArticlesContainer will be here soon </p>{" "}
+        <MyProjectsContainer />
       </Grid>
-
-      {/* <SmallArticlesContainer /> */}
     </Grid>
     </Box>
   );

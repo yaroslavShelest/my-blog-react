@@ -1,13 +1,6 @@
 import jsImg from './../../Assets/logo/MyRaiting/js.png';
 import cssImg from './../../Assets/logo/MyRaiting/css.png';
 import htmlImg from './../../Assets/logo/MyRaiting/html.png';
-import nodeImg from './../../Assets/logo/MyRaiting/node.png';
-import reactImg from './../../Assets/logo/MyRaiting/react.png';
-import sagaImg from './../../Assets/logo/MyRaiting/saga.png';
-import typeScriptImg from './../../Assets/logo/MyRaiting/typeScipt.png';
-import nestImg from './../../Assets/logo/MyRaiting/nest.png';
-import mongoDbImg from './../../Assets/logo/MyRaiting/mongodb.png';
-import materialImg from './../../Assets/logo/MyRaiting/material.png';
 import gitHubImg from './../../Assets/logo/MyRaiting/github.png';
 import dartImg from './../../Assets/logo/MyRaiting/dart.png';
 import earthImg from './../../Assets/logo/MyRaiting/earth.png';
@@ -25,7 +18,7 @@ const initialState = {
           { title:'Git, Jira',mainLogo: gitHubImg, description: "Set up a repository for team work" },
           { title:'Languages',mainLogo: earthImg, description: "Eanglish pre-intermidiate" },
         ],
-        aboutMeFew: "wellcome to starblog",
+        aboutMeFew: "I'm front end developer",
         aboutMeDescription: "I'm enjoing to develop on 1C and keen on php, I hope wordpress will save our world and opencart didn't try to complain about it state of assotiation. I have 3 yeas and a long dick to fucking sales managers",
         hasFindWork: true,
 };
