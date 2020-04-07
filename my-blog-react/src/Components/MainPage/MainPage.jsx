@@ -5,9 +5,12 @@ import Box from "@material-ui/core/Box";
 import { lighten, makeStyles, withStyles } from "@material-ui/core/styles";
 import LinearProgress from "@material-ui/core/LinearProgress";
 import Typography from '@material-ui/core/Typography';
+import Paper from "@material-ui/core/Paper";
 import SkillsRaitingContainer from './../../Containers/SkillsRaitingContainer';
 import FewInfoAboutMeContainer from './../../Containers/FewInfoAboutMeContainer';
 import MyProjectsContainer from './../../Containers/MyProjectsContainer';
+import WellcomeSection from "./WellcomeSection";
+import HeadlineSection from "./../Common/HeadlineSection";
 import styles from './../../App.scss';
 
 const useStyles = makeStyles(theme => ({
@@ -21,7 +24,8 @@ const useStyles = makeStyles(theme => ({
     display: "inline-block",
     margin: theme.spacing(1),
     width: "200px"
-  }
+  },
+
 }));
 
 
@@ -40,26 +44,31 @@ export default function MainPage(props) {
   const classes = useStyles();
 
   return (
+    <Box>
+      <Grid>
+        <WellcomeSection />
+      </Grid>
     <Grid container direction="column" spacing={5} className={classes.mainGrid}>
       <Grid item>
+        <HeadlineSection headlineText={"Few info about me"}/>
+      </Grid>
+      <Grid item>
         <FewInfoAboutMeContainer />
+      </Grid>
+      <Grid item>
+        <HeadlineSection headlineText={"My skills"}/>
       </Grid>
       <Grid item>
         <SkillsRaitingContainer  />
       </Grid>
       <Grid item>
-
-
-        
-        <MyProjectsContainer />
+        <HeadlineSection headlineText={"My projects"}/>
       </Grid>
       <Grid item>
-        <p>SmallArticlesContainer will be here soon </p>{" "}
+        <MyProjectsContainer />
       </Grid>
-
-      {/* <MyProjectsContainer /> */}
-      {/* <SmallArticlesContainer /> */}
     </Grid>
+    </Box>
   );
 }
 
