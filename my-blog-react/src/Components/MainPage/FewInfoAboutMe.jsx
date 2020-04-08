@@ -25,6 +25,7 @@ const useStyles = makeStyles(theme => ({
   },
   mainTextContainer: {
     margin: "12px"
+    
   },
   mainPhoto: {
     borderRadius: "50%",
@@ -98,14 +99,16 @@ const useStyles = makeStyles(theme => ({
     textTransform: "uppercase",
     letterSpacing: "5px",
   },
-
+  textBlock:{
+    color: "white"
+  }
 }));
 
 export default function FewInfoAboutMe({ aboutMeFew, aboutMeDescription, hasFindWork}) {
   const classes = useStyles();
 
   return (
-      <Slide direction="dawn" in={true} mountOnEnter unmountOnExit>
+      <Slide direction="left" in={true}  >
         <section className={classes.paper} >
           <Box className={classes.positionContainer}>
             <img src={backAboutMe} alt={"404"} className={classes.sectionImage} />
@@ -122,7 +125,7 @@ export default function FewInfoAboutMe({ aboutMeFew, aboutMeDescription, hasFind
             </Grid>
             <Grid item >
               <Box className={classes.mainTextContainer}>
-                <Typography variant="h6">{aboutMeDescription}</Typography>
+                <Typography className={classes.textBlock} variant="h6">{aboutMeDescription}</Typography>
               </Box>
             </Grid>
           </Grid>
