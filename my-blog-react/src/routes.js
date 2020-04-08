@@ -28,6 +28,7 @@ function Routes() {
             <Route path='/usefull' render={() => <UsefullLinksContainer />} />
             <Route path='/feedback' render={() => <div>FeeedBackContainer will be here soon</div>} />
             <Route path='/rest' render={() => <div>TakeRestContainer will be here soon</div>} />
+            <Route path='/contacts' render={() => <div>ContactsContainer will be here soon</div>} />
             <Route path='*' render={() => <div>404 NOT FOUND</div>} />
         </Switch>
 

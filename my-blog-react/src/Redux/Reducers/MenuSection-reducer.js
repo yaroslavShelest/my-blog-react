@@ -7,6 +7,7 @@ const initialState = {
           { title: 'Usefull links', url: '/usefull' },
           { title: 'Feed back', url: '/feedback' },
           { title: 'Just take a rest', url: '/rest' },
+          { title: 'Contacts', url: '/contacts' },
      ],
 
 };

@@ -12,6 +12,8 @@ import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ImportExport from '@material-ui/icons/ImportExport';
 import sword from './../../Assets/logo/starSword.png';
+import kauloRenImg from './../../Assets/devidersForSections/renKaulo.png';
+import defenderImg from './../../Assets/devidersForSections/defender.png';
 
 
 const useStyles = makeStyles({
@@ -48,7 +50,10 @@ export default function SkillsRaiting({ skills }) {
   const classes = useStyles();
 
   return (
-    <Grid container direction="row" justify="center">
+    <Grid container direction="row" justify="space-between">
+      <Grid item>
+      <img src={kauloRenImg} alt={"404"}  />
+      </Grid>
       <Grid item className={classes.item}>
     <Paper className={classes.paperSkills}> 
       {skills.map((skill, index) => (
@@ -83,6 +88,9 @@ export default function SkillsRaiting({ skills }) {
       ))}
     </Paper>
     </Grid>
+    <Grid item>
+    <img src={defenderImg} alt={"404"}  />
+      </Grid>
     </Grid>
   );
 }
