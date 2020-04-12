@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-export default function AboutMe(props) {
+export default function AboutMe(props) {   // TODO (It's just example)
   const classes = useStyles();
   const { post } = props;
 

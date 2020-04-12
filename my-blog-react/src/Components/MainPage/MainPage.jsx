@@ -4,8 +4,7 @@ import Container from "@material-ui/core/Container";
 import Box from "@material-ui/core/Box";
 import { lighten, makeStyles, withStyles } from "@material-ui/core/styles";
 import LinearProgress from "@material-ui/core/LinearProgress";
-import Typography from '@material-ui/core/Typography';
-import Paper from "@material-ui/core/Paper";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import SkillsRaitingContainer from './../../Containers/SkillsRaitingContainer';
 import FewInfoAboutMeContainer from './../../Containers/FewInfoAboutMeContainer';
 import MyProjectsContainer from './../../Containers/MyProjectsContainer';
@@ -15,7 +14,8 @@ import styles from './../../App.scss';
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
-    marginTop: theme.spacing(3)
+    marginTop: theme.spacing(3),
+    padding: theme.spacing(5)
   },
   root: {
     flexGrow: 1
@@ -25,58 +25,46 @@ const useStyles = makeStyles(theme => ({
     margin: theme.spacing(1),
     width: "200px"
   },
+  sectionOfMainPage: {
+    width: "100%"
+  },
+  sectionWithPosition: {
+    position: "relative",
+    transform: `translate(0px, -32px)`,
+  }
 
 }));
 
 
-const BorderLinearProgress = withStyles({
-  root: {
-    height: 10,
-    backgroundColor: lighten("#ff6c5c", 0.5)
-  },
-  bar: {
-    borderRadius: 20,
-    backgroundColor: "#ff6c5c"
-  }
-})(LinearProgress);
-
 export default function MainPage(props) {
   const classes = useStyles();
+  const matchesMaxW600 = useMediaQuery('(max-width:600px)');
 
   return (
     <Box>
-      <Grid>
+      <Grid className={matchesMaxW600 || classes.sectionWithPosition}>
         <WellcomeSection />
       </Grid>
-    <Grid container direction="column" spacing={5} className={classes.mainGrid}>
-      <Grid item>
-        <HeadlineSection headlineText={"Few info about me"}/>
+    <Grid container direction="column"  className={classes.mainGrid}>
+      <Grid item className={classes.sectionOfMainPage}>
+        <HeadlineSection headlineText={"About me"}/>
       </Grid>
-      <Grid item>
+      <Grid item className={classes.sectionOfMainPage}>
         <FewInfoAboutMeContainer />
       </Grid>
-      <Grid item>
+      <Grid item className={classes.sectionOfMainPage}>
         <HeadlineSection headlineText={"My skills"}/>
       </Grid>
-      <Grid item>
+      <Grid item className={classes.sectionOfMainPage}>
         <SkillsRaitingContainer  />
       </Grid>
-      <Grid item>
+      <Grid item className={classes.sectionOfMainPage}>
         <HeadlineSection headlineText={"My projects"}/>
       </Grid>
-      <Grid item>
+      <Grid item className={classes.sectionOfMainPage}>
         <MyProjectsContainer />
       </Grid>
     </Grid>
     </Box>
   );
 }
-
-// {[...new Array(30)]
-//   .map(
-//     () => `Cras mattis consectetur purus sit amet fermentum.
-// Cras justo odio, dapibus ac facilisis in, egestas eget quam.
-// Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-// Praesent commodo cursus magna, vel scelerisque nisl consectetur et.,`
-//   )
-//   .join('\n')}

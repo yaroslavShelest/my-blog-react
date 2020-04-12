@@ -71,17 +71,6 @@ export default function SkillsRaiting({ skills }) {
         <ExpansionPanelDetails>
           <Typography className={classes.skillDesc}>
           {skill.description}
-          <Box component="fieldset" mb={1} borderColor="transparent">
-            {/* <Slide direction="dawn" in={true} mountOnEnter unmountOnExit >
-            <Rating
-              readOnly
-              name="customized-10"
-              value={skill.value/10}
-              max={10}
-              size="small"
-            />
-            </Slide> */}
-          </Box>
           </Typography>
         </ExpansionPanelDetails>
       </ExpansionPanel>

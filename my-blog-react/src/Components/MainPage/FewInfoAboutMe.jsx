@@ -1,13 +1,11 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import Container from "@material-ui/core/Container";
-import Divider from "@material-ui/core/Divider";
 import Box from "@material-ui/core/Box";
 import { lighten, makeStyles, withStyles } from "@material-ui/core/styles";
-import Rating from "@material-ui/lab/Rating";
 import Typography from "@material-ui/core/Typography";
 import Slide from "@material-ui/core/Slide";
 import Paper from "@material-ui/core/Paper";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import image from "./../../Assets/myFotos/Cool.png";
 import backAboutMe from "./../../Assets/backgrounds/backAboutMe.png";
 
@@ -113,11 +111,13 @@ export default function FewInfoAboutMe({
   hasFindWork,
 }) {
   const classes = useStyles();
+  const matchesMaxW600 = useMediaQuery('(max-width:600px)');
+
 
   return (
     <Slide direction="left" in={true}>
       <Paper className={classes.paper}>
-        <Grid container direction="row-reverse" wrap="nowrap">
+        <Grid container direction="row-reverse" wrap={matchesMaxW600 ? {} : "nowrap"} style={{'justifyContent': 'center'}}>
           <Grid item xs={6}>
           <Box className={classes.mainPhotoContainer}>
               <img src={image} alt={"404"} className={classes.mainPhoto} />
