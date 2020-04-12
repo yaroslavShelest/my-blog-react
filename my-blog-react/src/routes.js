@@ -1,5 +1,5 @@
 import React from 'react';
-import AboutMeContainer from './Containers/AboutMeContainer';
+import PostContainer from './Containers/PostContainer';
 import MainPageContainer from './Containers/MainPageContainer';
 import UsefullLinksContainer from './Containers/UsefullLinksContainer';
 import { Route, Switch, Redirect } from 'react-router-dom';
@@ -23,7 +23,7 @@ function Routes() {
     return (
         <Switch>
             <Route exact path='/' render={() => <Redirect to={"/main"} />} />
-            <Route path='/aboutme' render={() => <AboutMeContainer post={mainFeaturedPost} />} />
+            <Route path='/posts' render={() => <PostContainer post={mainFeaturedPost} />} />
             <Route exact path='/main' render={() => <MainPageContainer />} />
             <Route path='/usefull' render={() => <UsefullLinksContainer />} />
             <Route path='/feedback' render={() => <div>FeeedBackContainer will be here soon</div>} />
