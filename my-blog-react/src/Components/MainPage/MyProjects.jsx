@@ -1,16 +1,13 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 // import JssProvider from "react-jss/lib/JssProvider";
 import CardActionArea from '@material-ui/core/CardActionArea';
-import { createGenerateClassName } from "@material-ui/core/styles";
 import { MuiThemeProvider, createMuiTheme } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
 import CardMedia from "@material-ui/core/CardMedia";
 import Grid from "@material-ui/core/Grid";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
-
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 
 
@@ -62,11 +59,14 @@ const themeMyProjects = {
 };
 
 export default function MyProjects({projects}) {
+
+  const matchesMaxW600 = useMediaQuery('(max-width:600px)');
+
   return (
       <MuiThemeProvider theme={createMuiTheme(themeMyProjects)}>
-        <Grid container direction="row" spacing={4} justify="space-evenly">
+        <Grid container  direction={matchesMaxW600 ? "column" : "row"} spacing={4} justify="space-evenly">
           {projects.map((project, index) => (
-          <Grid item>
+          <Grid item >
         <div>
           <Card className={"MuiEngagementCard--01"}>
             <CardActionArea >
