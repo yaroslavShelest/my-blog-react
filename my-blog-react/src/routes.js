@@ -4,6 +4,7 @@ import MainPageContainer from './Containers/MainPageContainer';
 import UsefullLinksContainer from './Containers/UsefullLinksContainer';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import NotFoundPage from './Components/Common/404Page';
+import AudioPlayer from './Components/Common/AudioPlayer';
 
 
 
@@ -28,7 +29,7 @@ function Routes() {
             <Route exact path='/main' render={() => <MainPageContainer />} />
             <Route path='/usefull' render={() => <UsefullLinksContainer />} />
             <Route path='/feedback' render={() => <div>FeeedBackContainer will be here soon</div>} />
-            <Route path='/rest' render={() => <div>TakeRestContainer will be here soon</div>} />
+            <Route path='/rest' render={() => <AudioPlayer />} />
             <Route path='/contacts' render={() => <div>ContactsContainer will be here soon</div>} />
             <Route path='*' render={() => <NotFoundPage/>} />
         </Switch>
