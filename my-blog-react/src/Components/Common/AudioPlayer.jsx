@@ -1,61 +1,118 @@
-import React, { useState, useEffect } from "react";
-import ReactHowler from 'react-howler';
-import Box from "@material-ui/core/Box";
+import React from "react";
+import ReactHowler from "react-howler";
 import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
-import { lighten, makeStyles, withStyles } from "@material-ui/core/styles";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
+import Box from "@material-ui/core/Box";
+import Player from "./Player";
 
+export default class AudioPlayer extends React.Component {
+  constructor(props) {
+    super(props);
 
-const useStyles = makeStyles((theme) => ({
-  notFoundImage: {
-    // maxHeight: "560px",
-    // maxWidth: "1232px",
-    // width: "100%",
-    height: "90vh",
-  },
-  sectionWithPosition: {
-    position: "relative",
-    transform: `translate(0px, -32px)`,
-  },
-}));
+    this.state = {
+      preload: false, // OPTIONAL
+      loaded: false,
+      playing: false,
+      volume: 1.0,
 
-export default function AudioPlayer(props) {
-  const classes = useStyles();
+      stations: this.props.stations.map(({ src }) => src), // TODO костыль
+      currentSrcIndex: 0,
+    };
+  }
 
-  let [playStatus, setPlayStatus] = useState(false);
-
-  const activatePlayStatus = () => {
-    setPlayStatus(true);
+  handleSwapToNext = () => {
+    if (this.state.stations.length > this.state.currentSrcIndex) {
+      // TODO checking
+      this.handleStop();
+      const nextIndex = this.state.currentSrcIndex;
+      console.log(
+        "nextIndex",
+        nextIndex,
+        "this.state.currentSrcIndex",
+        this.state.currentSrcIndex
+      );
+      this.setState({ currentSrcIndex: nextIndex + 1 });
+      this.handleOnPlay();
+    }
   };
-  const deactivatePlayStatus = () => {
-    setPlayStatus(false);
+  handleSwapToPrevius = () => {
+    if (this.state.currentSrcIndex > 0) {
+      // TODO checking
+      this.handleStop();
+      const previusIndex = this.state.currentSrcIndex;
+      console.log(
+        "previusIndex",
+        previusIndex,
+        "this.state.currentSrcIndex",
+        this.state.currentSrcIndex
+      );
+      this.setState({ currentSrcIndex: previusIndex - 1 });
+      this.handleOnPlay();
+    }
   };
 
-  return (
-    <React.Fragment>
-      <Paper>
-        <Grid container justify="center" align="center" direction="row">
-          <Grid item>
+  handleToggle = () => {
+    this.setState({
+      playing: !this.state.playing,
+    });
+  };
+
+  handleOnEnd = () => {
+    this.setState({
+      playing: false,
+    });
+  };
+
+  handleStop = () => {
+    this.player.stop();
+    this.setState({
+      playing: false, // Need to update our local state so we don't immediately invoke autoplay
+    });
+  };
+
+  handleOnLoaded = () => {
+    this.setState({
+      loaded: true,
+    });
+  };
+
+  handleOnPlay = () => {
+    this.setState({
+      playing: true,
+    });
+  };
+
+  render() {
+    return (
+      <React.Fragment>
+        <Paper>
           <ReactHowler
-            src={['spring.mp3']}
-            playing={playStatus}
+            src={this.state.stations[this.state.currentSrcIndex]}
+            playing={this.state.playing}
+            preload={this.state.preload}
+            html5={true}
+            volume={this.state.volume}
+            onLoad={this.handleOnLoaded}
+            onPlay={this.handleOnPlay}
+            onEnd={this.handleOnEnd}
+            ref={(ref) => (this.player = ref)}
           />
+          <Grid container justify="center" align="center" direction="row">
+            <Grid item>
+              <Box my={5}>
+                <Player
+                  handleSwapToNext={this.handleSwapToNext}
+                  handleSwapToPrevius={this.handleSwapToPrevius}
+                  handleToggle={this.handleToggle}
+                  playing={this.state.playing}
+                  {...this.props}
+                />
+              </Box>
+            </Grid>
           </Grid>
-          <Grid item>
-            {playStatus ? (
-              <Button onClick={deactivatePlayStatus} variant="contained" color="secondary">
-                Off 
-              </Button>
-            ) : (
-              <Button onClick={activatePlayStatus} variant="contained" color="primary">
-                On 
-              </Button>
-            )}
-          </Grid>
-        </Grid>
-      </Paper>
-    </React.Fragment>
-  );
+        </Paper>
+      </React.Fragment>
+    );
+  }
 }
