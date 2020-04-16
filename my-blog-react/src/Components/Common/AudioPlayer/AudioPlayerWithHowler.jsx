@@ -1,53 +1,63 @@
 import React from "react";
 import ReactHowler from "react-howler";
-import Button from "@material-ui/core/Button";
 import Paper from "@material-ui/core/Paper";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
-import Player from "./Player";
+import PlayerPanel from "./PlayerPanel";
 
-export default class AudioPlayer extends React.Component {
+export default class AudioPlayerWithHowler extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       preload: false, // OPTIONAL
       loaded: false,
       playing: false,
-      volume: 1.0,
+      volume: 1.0,  // TODO
 
-      stations: this.props.stations.map(({ src }) => src), // TODO костыль
-      currentSrcIndex: 0,
+      stations: this.props.stations,
+      currentStation: {
+        id: 1,
+        name: "Studio 21",
+        src: "https://icecast-studio21.cdnvideo.ru/S21cl_1p",
+        logo: "s21.png",
+      },
     };
   }
 
+  onChangeVolume = (e) => {  // TODO
+    this.setState({ volume: parseFloat(e.target.value) });
+  };
+
   handleSwapToNext = () => {
-    if (this.state.stations.length > this.state.currentSrcIndex) {
-      // TODO checking
+    if (this.state.stations.length > this.state.currentStation.id) {
       this.handleStop();
-      const nextIndex = this.state.currentSrcIndex;
-      console.log(
-        "nextIndex",
-        nextIndex,
-        "this.state.currentSrcIndex",
-        this.state.currentSrcIndex
+      const nextStation = this.state.stations.find(
+        (station) => station.id === this.state.currentStation.id + 1
       );
-      this.setState({ currentSrcIndex: nextIndex + 1 });
+      console.log(
+        "nextStation СТАЛО",
+        nextStation,
+        "this.state.currentStation БЫЛО",
+        this.state.currentStation
+      );
+      this.setState({ currentStation: nextStation });
       this.handleOnPlay();
     }
   };
+
   handleSwapToPrevius = () => {
-    if (this.state.currentSrcIndex > 0) {
-      // TODO checking
+    if (this.state.currentStation.id > 1) {
       this.handleStop();
-      const previusIndex = this.state.currentSrcIndex;
-      console.log(
-        "previusIndex",
-        previusIndex,
-        "this.state.currentSrcIndex",
-        this.state.currentSrcIndex
+      const previusStation = this.state.stations.find(
+        (station) => station.id === this.state.currentStation.id - 1
       );
-      this.setState({ currentSrcIndex: previusIndex - 1 });
+      console.log(
+        "previusStation СТАЛО",
+        previusStation,
+        "this.state.currentStation БЫЛО",
+        this.state.currentStation
+      );
+      this.setState({ currentStation: previusStation });
       this.handleOnPlay();
     }
   };
@@ -88,7 +98,7 @@ export default class AudioPlayer extends React.Component {
       <React.Fragment>
         <Paper>
           <ReactHowler
-            src={this.state.stations[this.state.currentSrcIndex]}
+            src={this.state.currentStation.src}
             playing={this.state.playing}
             preload={this.state.preload}
             html5={true}
@@ -101,12 +111,13 @@ export default class AudioPlayer extends React.Component {
           <Grid container justify="center" align="center" direction="row">
             <Grid item>
               <Box my={5}>
-                <Player
+                <PlayerPanel
                   handleSwapToNext={this.handleSwapToNext}
                   handleSwapToPrevius={this.handleSwapToPrevius}
                   handleToggle={this.handleToggle}
                   playing={this.state.playing}
-                  {...this.props}
+                  onChangeVolume={this.onChangeVolume}
+                  {...this.state}
                 />
               </Box>
             </Grid>

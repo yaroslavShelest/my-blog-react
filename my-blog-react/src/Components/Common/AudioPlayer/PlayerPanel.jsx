@@ -9,7 +9,8 @@ import SkipPreviousIcon from "@material-ui/icons/SkipPrevious";
 import PlayArrowIcon from "@material-ui/icons/PlayArrow";
 import SkipNextIcon from "@material-ui/icons/SkipNext";
 import PauseIcon from "@material-ui/icons/Pause";
-import music from "./../../Assets/music.gif";
+import music from "./../../../Assets/music.gif";
+import Volume from "./Volume";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   controls: {
     display: "flex",
+    justifyContent: "center",
     alignItems: "center",
     paddingLeft: theme.spacing(1),
     paddingBottom: theme.spacing(1),
@@ -37,20 +39,17 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function Player({
+export default function PlayerPanel({
   handleToggle,
   playing,
   handleSwapToNext,
   handleSwapToPrevius,
+  currentStation,
+  volume,
+  onChangeVolume,
 }) {
   const classes = useStyles();
   const theme = useTheme();
-  //   const stationsKesh = [];
-
-  //   stations.forEach(({ name, src }) => {
-  //     stationsKesh.push(name, src,)
-
-  // });
 
   return (
     <Card className={classes.root}>
@@ -59,7 +58,9 @@ export default function Player({
           <Typography component="h5" variant="h5">
             Awesome stations
           </Typography>
-          <Typography variant="subtitle1" color="textSecondary"></Typography>
+          <Typography variant="subtitle1" color="textSecondary">
+            {currentStation.name}
+          </Typography>
         </CardContent>
         <div className={classes.controls}>
           <IconButton
@@ -82,6 +83,9 @@ export default function Player({
           <IconButton aria-label="next" onClick={(e) => handleSwapToNext()}>
             <SkipNextIcon />
           </IconButton>
+        </div>
+        <div className={classes.controls}>
+          <Volume volume={volume} onChangeVolume={onChangeVolume} />
         </div>
       </div>
       <CardMedia
