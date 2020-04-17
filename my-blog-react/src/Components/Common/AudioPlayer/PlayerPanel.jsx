@@ -47,6 +47,8 @@ export default function PlayerPanel({
   currentStation,
   volume,
   onChangeVolume,
+  handleMuteToggle,
+  mute
 }) {
   const classes = useStyles();
   const theme = useTheme();
@@ -65,13 +67,13 @@ export default function PlayerPanel({
         <div className={classes.controls}>
           <IconButton
             aria-label="previous"
-            onClick={(e) => handleSwapToPrevius()}
+            onClick={handleSwapToPrevius}
           >
             <SkipPreviousIcon />
           </IconButton>
           <IconButton
             aria-label="play/pause"
-            onClick={() => handleToggle()}
+            onClick={handleToggle}
             color={playing ? "primary" : "secondary"}
           >
             {playing ? (
@@ -80,12 +82,12 @@ export default function PlayerPanel({
               <PlayArrowIcon className={classes.playIcon} />
             )}
           </IconButton>
-          <IconButton aria-label="next" onClick={(e) => handleSwapToNext()}>
+          <IconButton aria-label="next" onClick={handleSwapToNext}>
             <SkipNextIcon />
           </IconButton>
         </div>
         <div className={classes.controls}>
-          <Volume volume={volume} onChangeVolume={onChangeVolume} />
+          <Volume volume={volume} mute={mute} onChangeVolume={onChangeVolume} handleMuteToggle={handleMuteToggle}/>
         </div>
       </div>
       <CardMedia

@@ -2,7 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Slider from "@material-ui/core/Slider";
-import VolumeDown from "@material-ui/icons/VolumeDown";
+import VolumeOffIcon from '@material-ui/icons/VolumeOff';
 import VolumeUp from "@material-ui/icons/VolumeUp";
 
 const useStyles = makeStyles({
@@ -11,17 +11,17 @@ const useStyles = makeStyles({
   },
 });
 
-export default function Volume({ volume, onChangeVolume }) {
+export default function Volume({ volume, mute, onChangeVolume,handleMuteToggle }) {
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <Grid container spacing={2}>
-        <Grid item>
-          <VolumeDown />
+        <Grid item onClick={handleMuteToggle}>
+          { mute ? <VolumeOffIcon color="secondary" /> : <VolumeUp color="primary" />}
         </Grid>
         <Grid item xs>
-          <Slider min={0} max={1} step={0.05} value={volume} />
+          <Slider min={0} max={1} step={.05} value={volume} onChange={onChangeVolume} />
         </Grid>
       </Grid>
     </div>

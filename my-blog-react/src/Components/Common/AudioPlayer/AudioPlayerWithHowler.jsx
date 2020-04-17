@@ -12,7 +12,8 @@ export default class AudioPlayerWithHowler extends React.Component {
       preload: false, // OPTIONAL
       loaded: false,
       playing: false,
-      volume: 1.0,  // TODO
+      mute: false,
+      volume: 1.0,  
 
       stations: this.props.stations,
       currentStation: {
@@ -24,8 +25,8 @@ export default class AudioPlayerWithHowler extends React.Component {
     };
   }
 
-  onChangeVolume = (e) => {  // TODO
-    this.setState({ volume: parseFloat(e.target.value) });
+  onChangeVolume = (event, newValue) => {  
+    this.setState({ volume: newValue });
   };
 
   handleSwapToNext = () => {
@@ -35,10 +36,10 @@ export default class AudioPlayerWithHowler extends React.Component {
         (station) => station.id === this.state.currentStation.id + 1
       );
       console.log(
+        "this.state.currentStation БЫЛО",
+        this.state.currentStation,
         "nextStation СТАЛО",
         nextStation,
-        "this.state.currentStation БЫЛО",
-        this.state.currentStation
       );
       this.setState({ currentStation: nextStation });
       this.handleOnPlay();
@@ -52,10 +53,10 @@ export default class AudioPlayerWithHowler extends React.Component {
         (station) => station.id === this.state.currentStation.id - 1
       );
       console.log(
+        "this.state.currentStation БЫЛО",
+        this.state.currentStation,
         "previusStation СТАЛО",
         previusStation,
-        "this.state.currentStation БЫЛО",
-        this.state.currentStation
       );
       this.setState({ currentStation: previusStation });
       this.handleOnPlay();
@@ -93,6 +94,12 @@ export default class AudioPlayerWithHowler extends React.Component {
     });
   };
 
+  handleMuteToggle = () => {
+    this.setState({
+      mute: !this.state.mute
+    })
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -103,6 +110,7 @@ export default class AudioPlayerWithHowler extends React.Component {
             preload={this.state.preload}
             html5={true}
             volume={this.state.volume}
+            mute={this.state.mute}
             onLoad={this.handleOnLoaded}
             onPlay={this.handleOnPlay}
             onEnd={this.handleOnEnd}
@@ -115,6 +123,7 @@ export default class AudioPlayerWithHowler extends React.Component {
                   handleSwapToNext={this.handleSwapToNext}
                   handleSwapToPrevius={this.handleSwapToPrevius}
                   handleToggle={this.handleToggle}
+                  handleMuteToggle={this.handleMuteToggle}
                   playing={this.state.playing}
                   onChangeVolume={this.onChangeVolume}
                   {...this.state}
