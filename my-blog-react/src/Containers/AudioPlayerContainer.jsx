@@ -1,5 +1,5 @@
 import React from "react";
-import AudioPlayerWithHowler from "./../Components/Common/AudioPlayer/AudioPlayerWithHowler";
+import AudioPlayerWithHowler from "./../Components/Music/AudioPlayer/AudioPlayerWithHowler";
 import { connect } from "react-redux";
 
 class AudioPlayerContainer extends React.Component {
