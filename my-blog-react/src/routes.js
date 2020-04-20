@@ -29,7 +29,7 @@ function Routes() {
             <Route exact path='/main' render={() => <MainPageContainer />} />
             <Route path='/usefull' render={() => <UsefullLinksContainer />} />
             <Route path='/feedback' render={() => <div>FeeedBackContainer will be here soon</div>} />
-            <Route path='/rest' render={() => <AudioPlayerContainer />} />
+            <Route path='/music' render={() => <AudioPlayerContainer />} />
             <Route path='/contacts' render={() => <div>ContactsContainer will be here soon</div>} />
             <Route path='*' render={() => <NotFoundPage/>} />
         </Switch>
