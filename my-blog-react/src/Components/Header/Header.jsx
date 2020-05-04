@@ -11,7 +11,7 @@ import HeaderTopMenu from "./HeaderTopMenu";
 import Typography from '@material-ui/core/Typography';
 import { lighten, makeStyles, withStyles } from "@material-ui/core/styles";
 import logo from './../../Assets/logo/logo.png'
-import logoMenu from './../../Assets/devidersForSections/logo1.png'
+import AnimatedLogo from "./AnimatedLogo";
 
 
 const useStyles = makeStyles(theme => ({
@@ -39,9 +39,7 @@ export default function Header(props) {
         <Toolbar>
           <Grid container direction="row" justify="space-between" alignItems="center">
             <Grid item xs={5}>
-              <Box className={classes.mainLogo}>
-                <img src={logoMenu} alt={"404"} width='100px' height='50px' />
-              </Box>
+            <AnimatedLogo animatedText={props.animatedText}/>
             </Grid>
 
             <Grid item xs={5} >

@@ -5,12 +5,14 @@ import menuSectionReducer from './Reducers/MenuSection-reducer';
 import aboutMeReducer from './Reducers/AboutMe-reducer';
 import myProjectsReducer from './Reducers/MyProjects-reducer';
 import radioStationsReducer from './Reducers/radioStations-reducer';
+import UsefullLinksReducer from './Reducers/UsefullLinks-reducer';
 
 let reducers = combineReducers({
     menuSection: menuSectionReducer,
     aboutMe: aboutMeReducer,
     myProjects: myProjectsReducer,
     myRadio: radioStationsReducer,
+    UsefullLinks: UsefullLinksReducer,
     // mainPage: mainPageReducer,
     // articlesPage: articleReducer,
     // auth: authReducer,

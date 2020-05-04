@@ -11,6 +11,7 @@ class HeaderContainer extends React.Component {
 
 const mapStateToProps = (state) => ({
   sections: state.menuSection.sections,
+  animatedText: state.menuSection.animatedText,
 });
 
 

@@ -7,7 +7,6 @@ import Slide from "@material-ui/core/Slide";
 import Paper from "@material-ui/core/Paper";
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import image from "./../../Assets/myFotos/Cool.png";
-import backAboutMe from "./../../Assets/backgrounds/backAboutMe.png";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
