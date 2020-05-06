@@ -9,4 +9,8 @@ class UsefullLinksContainer extends React.Component {
   }
 }
 
-export default connect(null, {})(UsefullLinksContainer);
+const mapStateToProps = (state) =>({
+  links: state.UsefullLinks.links
+})
+
+export default connect(mapStateToProps, {})(UsefullLinksContainer);

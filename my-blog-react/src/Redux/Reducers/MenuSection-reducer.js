@@ -4,10 +4,15 @@ const initialState = {
      sections: [
           { title: 'Main', url: '/main' },
           { title: 'Music', url: '/music' },
-          { title: 'Posts', url: '/posts' },
           { title: 'Usefull links', url: '/usefull' },
+          { title: 'Posts', url: '/posts' },
           { title: 'Feed back', url: '/feedback' },
           { title: 'Contacts', url: '/contacts' },
+     ],
+     animatedText: ["Alex application", 
+     "Alex radio",
+      "Alex solar system",
+     "Alex usefull library"
      ],
 
 };

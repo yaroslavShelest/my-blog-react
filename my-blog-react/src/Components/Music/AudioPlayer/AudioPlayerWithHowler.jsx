@@ -5,6 +5,7 @@ import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import PlayerPanel from "./PlayerPanel";
 import StationsList from "./StationsList";
+import HeadlineSection from "../../Common/HeadlineSection";
 
 export default class AudioPlayerWithHowler extends React.Component {
   constructor(props) {
@@ -120,6 +121,7 @@ export default class AudioPlayerWithHowler extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <HeadlineSection headlineText="rest with music!" />
         <Grid>
           <ReactHowler
             src={this.state.currentStation.src}

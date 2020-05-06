@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "center",
     background: "aliceblue",
-    maxWidth: "400px",
+    maxWidth: "500px",
   },
   details: {
     display: "flex",
@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     flex: "1 0 auto",
   },
   cover: {
-    width: 151,
+    width: 250,
   },
   controls: {
     display: "flex",

@@ -14,7 +14,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 const muiBaseTheme = createMuiTheme();
 
 
-const themeMyProjects = {
+const themeUsefullTypes = {
   overrides: {
     MuiCard: {
       root: {
@@ -40,7 +40,8 @@ const themeMyProjects = {
             margin: `${muiBaseTheme.spacing.unit * 3}px 0`
           },
           "& .MuiTypography--heading": {
-            fontWeight: "bold"
+            fontWeight: "bold",
+            textAlign: "center",
           },
           "& .MuiTypography--subheading": {
             lineHeight: 1.8
@@ -58,39 +59,38 @@ const themeMyProjects = {
   }
 };
 
-export default function MyProjects({projects}) {
+export default function UsefullTypes() {
 
   const matchesMaxW600 = useMediaQuery('(max-width:600px)');
+  const types = [
+    { name: 'JS', description: "Includes a lot of links about js, It's like vanila JS,aproaches and other"},
+    { name: 'HTML', description: "Validators,Can I use and latest standart"},
+    { name: 'CSS', description: "It's about aproaches how to do awesome UI"},
+    { name: 'React', description: "Maybe all about React"},
+  ]
 
   return (
-      <MuiThemeProvider theme={createMuiTheme(themeMyProjects)}>
+      <MuiThemeProvider theme={createMuiTheme(themeUsefullTypes)}>
         <Grid container  direction={matchesMaxW600 ? "column" : "row"} spacing={4} justify="space-evenly">
-          {projects.map((project, index) => (
-            <Grid item  >
+          {types.map((type, index) => (
+          <Grid item  key={index}>
         <div>
           <Card className={"MuiEngagementCard--01"}>
-            <CardActionArea >
-            <CardMedia
-              image={
-                project.image
-              } className={"imageProsto"}
-            />
             <CardContent>
               <Typography
                 className={"MuiTypography--heading"}
-                variant={"h6"}
+                variant={"h2"}
                 gutterBottom
               >
-                {project.name}
+                {type.name}
               </Typography>
               <Typography
                 className={"MuiTypography--subheading"}
                 variant={"caption"}
               >
-                {project.description}
+                {type.description}
               </Typography> 
             </CardContent>
-            </CardActionArea>
           </Card>
         </div>
         </Grid>))}
