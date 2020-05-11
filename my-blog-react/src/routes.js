@@ -1,11 +1,11 @@
 import React from 'react';
 import PostContainer from './Containers/PostContainer';
 import MainPageContainer from './Containers/MainPageContainer';
-import UsefullLinksContainer from './Containers/UsefullLinksContainer';
+// import UsefullLinksContainer from './Containers/UsefullLinksContainer';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import NotFoundPage from './Components/Common/404Page';
 import AudioPlayerContainer from './Containers/AudioPlayerContainer';
-
+import { withSuspense } from './hoc/withSuspense';
 
 
 const mainFeaturedPost = {        // its should delete soon or will delivered in BLL
@@ -18,7 +18,8 @@ const mainFeaturedPost = {        // its should delete soon or will delivered in
   };
   
 
-
+  const UsefullLinksContainerWithLazy = React.lazy(() => import('./Containers/UsefullLinksContainer'));
+  const AudioPlayerContainerWithLazy = React.lazy(() => import('./Containers/AudioPlayerContainer'));
 
 function Routes() {
 
@@ -27,9 +28,9 @@ function Routes() {
             <Route exact path='/' render={() => <Redirect to={"/main"} />} />
             <Route path='/posts' render={() => <PostContainer post={mainFeaturedPost} />} />
             <Route exact path='/main' render={() => <MainPageContainer />} />
-            <Route path='/usefull' render={() => <UsefullLinksContainer />} />
+            <Route path='/usefull' render={withSuspense(UsefullLinksContainerWithLazy)} />
             <Route path='/feedback' render={() => <div>FeeedBackContainer will be here soon</div>} />
-            <Route path='/music' render={() => <AudioPlayerContainer />} />
+            <Route path='/music' render={withSuspense(AudioPlayerContainerWithLazy)} />
             <Route path='/contacts' render={() => <div>ContactsContainer will be here soon</div>} />
             <Route path='*' render={() => <NotFoundPage/>} />
         </Switch>

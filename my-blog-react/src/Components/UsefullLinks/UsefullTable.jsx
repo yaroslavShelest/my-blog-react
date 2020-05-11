@@ -16,7 +16,7 @@ export default function UsefullTable({links}) {   // REMOVE this table or swap
 
   return (
     <MaterialTable
-      title="Editable Example"
+      title=""
       columns={state.columns}
       data={state.data}
       options={{

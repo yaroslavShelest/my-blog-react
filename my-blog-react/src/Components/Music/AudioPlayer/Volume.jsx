@@ -9,6 +9,9 @@ const useStyles = makeStyles({
   root: {
     width: 200,
   },
+  volumeBtn: {
+    cursor: "pointer"
+  }
 });
 
 export default function Volume({ volume, mute, onChangeVolume,handleMuteToggle }) {
@@ -18,7 +21,7 @@ export default function Volume({ volume, mute, onChangeVolume,handleMuteToggle }
     <div className={classes.root}>
       <Grid container spacing={2}>
         <Grid item onClick={handleMuteToggle}>
-          { volume === 0 || mute ? <VolumeOffIcon color="secondary" /> : <VolumeUp color="primary" />}
+          { volume === 0 || mute ? <VolumeOffIcon color="secondary" className={classes.volumeBtn}/> : <VolumeUp color="primary" className={classes.volumeBtn}/>}
         </Grid>
         <Grid item xs>
           <Slider min={0} max={1} step={.05} value={volume} onChange={onChangeVolume} />

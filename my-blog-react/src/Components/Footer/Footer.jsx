@@ -19,10 +19,10 @@ function Copyright() {
 
 const useStyles = makeStyles(theme => ({
   footer: {
-    // backgroundColor: "#1a1a1a",
     color:'#a7a7a7',
     marginTop: theme.spacing(16),
     padding: theme.spacing(6, 0),
+    flexShrink: "0"
     // тут прижать футер
   },
 }));

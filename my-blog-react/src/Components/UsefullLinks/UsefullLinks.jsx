@@ -1,9 +1,11 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
 import HeadlineSection from "../Common/HeadlineSection";
 import UsefullTypes from "./UsefullTypes";
 import UsefullTable from "./UsefullTable";
+
 
 const useStyles = makeStyles(theme => ({
   mainGrid: {
@@ -24,9 +26,10 @@ export default function UsefullLinks(props) {
       <UsefullTypes />
     </Grid>
    <Grid item >
-     <UsefullTable {...props}/>
+      <Box  mt={4}>
+        <UsefullTable {...props}/>
+      </Box>
    </Grid>
-   <Grid item > <p>Table will be here soon </p> </Grid>
     </Grid>
   );
 }

@@ -67,6 +67,8 @@ export default function UsefullTypes() {
     { name: 'HTML', description: "Validators,Can I use and latest standart"},
     { name: 'CSS', description: "It's about aproaches how to do awesome UI"},
     { name: 'React', description: "Maybe all about React"},
+    { name: 'ThreeJS', description: "Foundamentals about Three"},
+    { name: 'NextJS', description: "Foundamentals about Next"},
   ]
 
   return (
