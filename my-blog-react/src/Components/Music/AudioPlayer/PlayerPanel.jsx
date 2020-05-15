@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles, useTheme } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import CardContent from "@material-ui/core/CardContent";
 import CardMedia from "@material-ui/core/CardMedia";
 import IconButton from "@material-ui/core/IconButton";
@@ -15,6 +16,13 @@ import Volume from "./Volume";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
+    justifyContent: "center",
+    background: "aliceblue",
+    maxWidth: "500px",
+  },
+  forSmallRoot: {
+    display: "flex",
+    flexDirection: "column-reverse",
     justifyContent: "center",
     background: "aliceblue",
     maxWidth: "500px",
@@ -41,6 +49,11 @@ const useStyles = makeStyles((theme) => ({
     height: 38,
     width: 38,
   },
+  coverImg: {
+    width: "100%",
+    height: "258px",
+    margin: "0 auto",
+  }
 }));
 
 export default function PlayerPanel({
@@ -56,10 +69,11 @@ export default function PlayerPanel({
 }) {
   const classes = useStyles();
   const theme = useTheme();
+  const matchesMaxW550 = useMediaQuery('(max-width:550px)');
   const path = './logos/';
 
   return (
-    <Card className={classes.root}>
+    <Card className={matchesMaxW550 ? classes.forSmallRoot : classes.root}>
       <div className={classes.details}>
         <CardContent className={classes.content}>
           <Typography component="h5" variant="h5">
@@ -96,7 +110,7 @@ export default function PlayerPanel({
         </div>
       </div>
       <CardMedia
-        className={classes.cover}
+        className={matchesMaxW550 ? classes.coverImg : classes.cover}
         image={path + currentStation.logo}
         title="Live from space album cover"
       />

@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 // import './App.css'
 import * as THREE from "three";
 // import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
@@ -764,13 +765,13 @@ this.scene.add(this.stars2);
 
 
 
-export default class SolarSystemContainer extends React.Component {
+export default function SolarSystemContainer () {
+const matchesMaxW1023 = useMediaQuery('(max-width:1023px)');
 
-  render() {
     return (
       <>
-         <SolarSystem />
+      {matchesMaxW1023 ? <h1 style={{color: "white",textAlign: "center"}}>Try it in laptop or desktop</h1>: <SolarSystem />}     
       </>
     );
-  }
+
 }

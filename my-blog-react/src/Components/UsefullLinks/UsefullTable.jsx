@@ -31,7 +31,7 @@ export default function UsefullTable({links}) {   // REMOVE this table or swap
           icon: 'link',
           tooltip: 'go to source',
           onClick: (event, rowData) => 
-          window.location.replace(`${rowData.src}`) 
+          window.open(rowData.src, '_blank')
         }
       ]}
     />
