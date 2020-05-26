@@ -6,6 +6,7 @@ import aboutMeReducer from './Reducers/AboutMe-reducer';
 import myProjectsReducer from './Reducers/MyProjects-reducer';
 import radioStationsReducer from './Reducers/radioStations-reducer';
 import UsefullLinksReducer from './Reducers/UsefullLinks-reducer';
+import ContactsReducer from './Reducers/Contacts-reducer';
 
 let reducers = combineReducers({
     menuSection: menuSectionReducer,
@@ -13,6 +14,7 @@ let reducers = combineReducers({
     myProjects: myProjectsReducer,
     myRadio: radioStationsReducer,
     UsefullLinks: UsefullLinksReducer,
+    Contacts: ContactsReducer,
     // mainPage: mainPageReducer,
     // articlesPage: articleReducer,
     // auth: authReducer,
