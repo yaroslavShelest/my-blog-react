@@ -1,6 +1,9 @@
 import roma from './../../Assets/myTeachers/Roma.jpg';
 import oleksander from './../../Assets/myTeachers/Oleksander.jpg';
 import dima from './../../Assets/myTeachers/Dima.jpg';
+
+import hillel from './../../Assets/logo/schoolsLogo/hillel.png';
+import itka from './../../Assets/logo/schoolsLogo/itkamasutra.jpeg';
 const SOME_ACTION_TYPE = 'SOME_ACTION_TYPE';
 
 const initialState = {  // TODO
@@ -14,6 +17,10 @@ const initialState = {  // TODO
            {name:"Roman Scripchenko", position: 'Front-end dev. (Yalantis)', srcImg: roma},
            {name:"Sasha Gribabanov", position: 'Fullstack dev. (DataArt)', srcImg:  oleksander},
            {name:"Dima Kuzuberdin", position: 'Fullstack dev. (It-kamasutra)', srcImg: dima},
+      ],
+      logos: [
+           {srcImg: hillel},
+           {srcImg: itka},
       ]
 };
 

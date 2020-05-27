@@ -12,6 +12,7 @@ class ContactsContainer extends React.Component {
 const mapStateToProps = (state) => ({
   myContactsLinks: state.Contacts.myContactsLinks,
   myTeachers: state.Contacts.myTeachers,
+  logos: state.Contacts.logos,
 });
 
 export default connect(mapStateToProps, {})(ContactsContainer);

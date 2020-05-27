@@ -43,7 +43,7 @@ export default function TextMobileStepper({myTeachers}) {
   const classes = useStyles();
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
-  const [isStopMoving, setIsStopMoving] = React.useState(false);
+  const [isStopMoving, setIsStopMoving] = React.useState(true);
   const maxSteps = myTeachers.length;
 
   const handleNext = () => {
@@ -67,26 +67,14 @@ export default function TextMobileStepper({myTeachers}) {
   return (
     <div className={classes.root} onMouseOut={continueToPlay}>
       <Paper square elevation={0} className={classes.backOfImg}  >
-     {isStopMoving ?
-      <AutoPlaySwipeableViews
-      axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-      index={activeStep}
-      enableMouseEvents
-      >
-      {myTeachers.map((step, index) => (
-        <div key={step.name}>
-          {Math.abs(activeStep - index) <= 2 ? (
-            <img className={classes.img} src={step.srcImg} alt={step.name} />
-          ) : null}
-        </div>
-      ))}
-    </AutoPlaySwipeableViews>
-      :
+     
+      
         <AutoPlaySwipeableViews
         axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
         index={activeStep}
         onChangeIndex={handleStepChange}
         enableMouseEvents
+       
         >
         {myTeachers.map((step, index) => (
           <div key={step.name}>
@@ -96,7 +84,7 @@ export default function TextMobileStepper({myTeachers}) {
           </div>
         ))}
       </AutoPlaySwipeableViews>
-      }
+      
       </Paper>
       <Paper square elevation={0} className={classes.header}>
           <Grid container direction="column">
