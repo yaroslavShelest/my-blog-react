@@ -7,7 +7,7 @@ import HeadlineSection from "../Common/HeadlineSection";
 import Typography from '@material-ui/core/Typography';
 import TextMobileStepper from "./StepperWithMap/Stepper";
 import Map from "./StepperWithMap/Map";
-import SchoolLogos from "./StepperWithMap/SchoolLogos";
+import MyLinksWithLogos from "./StepperWithMap/MyLinksWithLogos";
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -19,11 +19,14 @@ const useStyles = makeStyles((theme) => ({
   },
   contactsContainer: {
     justifyContent: "space-between",
+  },
+  myLinksCenter: {
+    margin: "0 auto",
   }
 }));
 
 
-export default function Contacts({ myContactsLinks, myTeachers, logos }) {
+export default function Contacts({ myContactsLinks, myTeachers }) {
   const classes = useStyles();
 
   return (
@@ -43,8 +46,8 @@ export default function Contacts({ myContactsLinks, myTeachers, logos }) {
                 <TextMobileStepper myTeachers={myTeachers}/>
                 
               </Grid>
-              <Grid item>
-                <SchoolLogos logos={logos}/>
+              <Grid item className={classes.myLinksCenter}>
+                <MyLinksWithLogos myContactsLinks={myContactsLinks}/>
 
               </Grid>
               <Grid item>

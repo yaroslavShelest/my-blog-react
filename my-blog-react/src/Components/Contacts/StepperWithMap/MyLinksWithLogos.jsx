@@ -1,7 +1,5 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
-import MobileStepper from '@material-ui/core/MobileStepper';
-import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 
 
@@ -21,17 +19,15 @@ const useStyles = makeStyles((theme) => ({
   }
 }));
 
-export default function SchoolLogos({logos}) {
+export default function MyLinksWithLogos({myContactsLinks}) {
   const classes = useStyles();
-  const theme = useTheme();
-  
-
  
   return (<>
    <Grid container direction="column" className={classes.logosContainer}>
-      {logos.map((logo, index) => (
-        <img key={index} className={classes.img} src={logo.srcImg} alt={"404"} />
-       
+      {myContactsLinks.map((link, index) => (
+        <a key={index} target="_blank" href={link.src} >
+        <img key={link.name} className={classes.img} src={link.srcImg} alt={link.name} />
+        </a>
       ))}
       </Grid>
    </>
