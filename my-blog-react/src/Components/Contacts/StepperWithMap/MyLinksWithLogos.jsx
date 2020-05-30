@@ -1,8 +1,10 @@
 import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
-
-
+import GitHubIcon from '@material-ui/icons/GitHub';
+import MailIcon from '@material-ui/icons/Mail';
+import TelegramIcon from '@material-ui/icons/Telegram';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 
 const useStyles = makeStyles((theme) => ({
   img: {
@@ -25,8 +27,11 @@ export default function MyLinksWithLogos({myContactsLinks}) {
   return (<>
    <Grid container direction="column" className={classes.logosContainer}>
       {myContactsLinks.map((link, index) => (
-        <a key={index} target="_blank" href={link.src} >
-        <img key={link.name} className={classes.img} src={link.srcImg} alt={link.name} />
+        <a key={index} target="_blank" href={link.src} className={"myContactsIcon"}>
+      {link.name==="github" ? <GitHubIcon color="primary" style={{ fontSize: 75 }}/>:''}
+      {link.name==="telegram" ? <TelegramIcon color="secondary" style={{ fontSize: 75 }}/>:''}
+      {link.name==="gmail" ? <MailIcon  style={{ fontSize: 75 }}/>:''}
+      {link.name==="linkedin" ? <LinkedInIcon style={{ fontSize: 75 }}/>:''}
         </a>
       ))}
       </Grid>

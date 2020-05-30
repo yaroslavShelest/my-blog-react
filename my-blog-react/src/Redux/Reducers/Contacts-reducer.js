@@ -11,10 +11,10 @@ const SOME_ACTION_TYPE = 'SOME_ACTION_TYPE';
 
 const initialState = {  // TODO
       myContactsLinks: [
-           {name: "GitHub", src:"https://github.com/WannaBeDream", srcImg:github},
-           {name: "Linkedin", src:"https://www.linkedin.com/in/alex-bobyr-629630178/",srcImg: linkedin},
-           {name: "gmail", src:"mailto:alexxldub@gmail.com",srcImg: gmail},
-           {name: "telegram", src:"https://t.me/NotQwerk",srcImg: telegram},
+           {name: "github", src:"https://github.com/WannaBeDream"},
+           {name: "linkedin", src:"https://www.linkedin.com/in/alex-bobyr-629630178/"},
+           {name: "gmail", src:"mailto:alexxldub@gmail.com"},
+           {name: "telegram", src:"https://t.me/NotQwerk"},
           ],
       myTeachers: [
            {name:"Roman Scripchenko", position: 'Front-end dev. (Yalantis)', srcImg: roma},
