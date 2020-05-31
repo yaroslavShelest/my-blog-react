@@ -6,7 +6,7 @@ const initialState = {
           { title: 'Music', url: '/music' },
           { title: '3Dsys.', url: '/solarsys' },
           { title: 'Library', url: '/library' },
-          { title: 'Posts', url: '/posts' },
+          // { title: 'Posts', url: '/posts' },
           { title: 'Contacts', url: '/contacts' },
      ],
      animatedText: ["Alex application", 

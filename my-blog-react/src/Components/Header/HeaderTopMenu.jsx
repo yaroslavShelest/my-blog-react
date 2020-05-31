@@ -10,6 +10,11 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
+import HomeIcon from '@material-ui/icons/Home';
+import LibraryMusicIcon from '@material-ui/icons/LibraryMusic';
+import Brightness7Icon from '@material-ui/icons/Brightness7';
+import LibraryBooksIcon from '@material-ui/icons/LibraryBooks';
+import ContactsIcon from '@material-ui/icons/Contacts';
 import Grid from "@material-ui/core/Grid";
 import { withStyles } from '@material-ui/core/styles';
 import { green, purple } from '@material-ui/core/colors';
@@ -34,7 +39,12 @@ const useStyles = makeStyles(theme => ({
   },
   margin: {
     margin: theme.spacing(1)
-  }
+  },
+  activeLink: {
+    color: "gold",
+    background: "black",
+  },
+
 }));
 
 
@@ -69,16 +79,21 @@ export default function HeaderTopMenu({sections}) {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        <Grid container direction="row"  alignItems="center">
+        <Grid container direction="row"  alignItems="center" justify="center">
         {sections.map((section, index) => (
           <Grid item xs={9} sm={6} md={2}>
           <ListItem 
           component={NavLink}
           to={section.url}
           button
+          activeClassName={classes.activeLink}
           key={section.title}>
             <ListItemIcon>
-              {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              {section.title  === "Main" ? <HomeIcon style={{ color: green[500] }} /> : ""}
+              {section.title  === "Music" ? <LibraryMusicIcon color="primary" /> : ""}
+              {section.title  === "3Dsys." ? <Brightness7Icon color="secondary"/> : ""}
+              {section.title  === "Library" ? <LibraryBooksIcon style={{color: "darkmagenta"}} /> : ""}
+              {section.title  === "Contacts" ? <ContactsIcon style={{color: "lightseagreen"}} /> : ""}
             </ListItemIcon>
             <ListItemText  primary={section.title} />
           </ListItem>
