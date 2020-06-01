@@ -16,7 +16,7 @@ export default function UsefullTable({links}) {   // REMOVE this table or swap
 
   return (
     <MaterialTable
-      title="Editable Example"
+      title=""
       columns={state.columns}
       data={state.data}
       options={{
@@ -31,7 +31,7 @@ export default function UsefullTable({links}) {   // REMOVE this table or swap
           icon: 'link',
           tooltip: 'go to source',
           onClick: (event, rowData) => 
-          window.location.replace(`${rowData.src}`) 
+          window.open(rowData.src, '_blank')
         }
       ]}
     />

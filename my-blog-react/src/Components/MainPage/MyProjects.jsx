@@ -60,6 +60,10 @@ const themeMyProjects = {
 
 export default function MyProjects({projects}) {
 
+  const openSources = (src) => {
+    window.open(src, '_blank')
+  }
+
   const matchesMaxW600 = useMediaQuery('(max-width:600px)');
 
   return (
@@ -69,7 +73,7 @@ export default function MyProjects({projects}) {
             <Grid item  >
         <div>
           <Card className={"MuiEngagementCard--01"}>
-            <CardActionArea >
+            <CardActionArea onClick={()=> openSources(project.githubUrl)}>
             <CardMedia
               image={
                 project.image

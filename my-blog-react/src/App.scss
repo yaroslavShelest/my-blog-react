@@ -6,12 +6,164 @@
   no-repeat center center;
   background-size: cover;
   background-attachment: fixed;
-  height: 100%;
+
+
+
+// прижимал футер ,так же стиль в App.js style={{flex: "1 0 auto"}}
+  height: 100%; 
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.leaflet-container {
+  height: 498px;
+  width: 400px;
+}
+
+.myContactsIcon:hover {
+  transform: scale(1.2);
 }
 
 .clearPaper {
   background: inherit;
   box-shadow: none;
+}
+
+
+.btnMercury {
+  top:130px;
+  left: 20px;
+  position: absolute;
+  z-index: 1000;
+  font-size: 12px;
+  color: white;
+  border: 1px solid white;
+  background: black;
+}
+.btnVenus {
+  top:160px;
+  left: 20px;
+  position: absolute;
+  z-index: 1000;
+  font-size: 12px;
+  color: white;
+  border: 1px solid white;
+  background: black;
+}
+.btnMars {
+  top:190px;
+  left: 20px;
+  position: absolute;
+  z-index: 1000;
+  font-size: 12px;
+  color: white;
+  border: 1px solid white;
+  background: black;
+}
+.btnJupiter {
+  top:220px;
+  left: 20px;
+  position: absolute;
+  z-index: 1000;
+  font-size: 12px;
+  color: white;
+  border: 1px solid white;
+  background: black;
+}
+.btnSaturn {
+  top:250px;
+  left: 20px;
+  position: absolute;
+  z-index: 1000;
+  font-size: 12px;
+  color: white;
+  border: 1px solid white;
+  background: black;
+}
+.btnUran {
+  top:280px;
+  left: 20px;
+  position: absolute;
+  z-index: 1000;
+  font-size: 12px;
+  color: white;
+  border: 1px solid white;
+  background: black;
+}
+.btnNeptune {
+  top:310px;
+  left: 20px;
+  position: absolute;
+  z-index: 1000;
+  font-size: 12px;
+  color: white;
+  border: 1px solid white;
+  background: black;
+}
+.btnPluto {
+  top:340px;
+  left: 20px;
+  position: absolute;
+  z-index: 1000;
+  font-size: 12px;
+  color: white;
+  border: 1px solid white;
+  background: black;
+}
+.btnEarth {
+  top:370px;
+  left: 20px;
+  position: absolute;
+  z-index: 1000;
+  font-size: 12px;
+  color: white;
+  border: 1px solid white;
+  background: black;
+}
+.btnSun {
+  top:400px;
+  left: 20px;
+  position: absolute;
+  z-index: 1000;
+  font-size: 12px;
+  color: white;
+  border: 1px solid white;
+  background: black;
+}
+.btnSystem {
+  top:430px;
+  left: 20px;
+  position: absolute;
+  z-index: 1000;
+  font-size: 12px;
+  color: rgb(21, 186, 207);
+  border: 1px solid white;
+  background: black;
+}
+canvas {
+ z-index: 0;
+}
+
+#planetDescription {
+  font-family: 'Segoe UI';
+  color: white;
+  width: 300px;
+  position: absolute;
+  z-index: 100;
+  display: none;
+  left: 65%;
+  top: 35%;
+}
+
+main .canvasContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden; 
+   width: 100vw;
+  height: 100vh;
+
 }
 
 

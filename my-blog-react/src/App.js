@@ -9,23 +9,23 @@ import {withGlobalFont} from './hoc/withGlobalFont';
 
 function App() {
 
-
+ 
   return (
 
     <React.Fragment>
       <Box className={"mainBackground"}>
-      <Container maxWidth="lg"  >
+      <Container maxWidth="lg" style={{flex: "1 0 auto"}}>
         <HeaderContainer/>
 
-        {/* <Box my={2} > */}
+
         <main>
           <Routes />
         </main>
 
-        {/* </Box> */}
+
       </Container>
       
-      <FooterContainer title="Thanks for wathcing" description="Something here to give the footer a purpose!" />
+      <FooterContainer  title="Thanks for wathcing" description="Something here to give the footer a purpose!" />
       </Box>
     </React.Fragment>
   );
