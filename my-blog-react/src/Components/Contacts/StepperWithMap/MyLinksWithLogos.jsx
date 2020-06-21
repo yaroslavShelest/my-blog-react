@@ -28,10 +28,10 @@ export default function MyLinksWithLogos({myContactsLinks}) {
    <Grid container direction="column" className={classes.logosContainer}>
       {myContactsLinks.map((link, index) => (
         <a key={index} target="_blank" href={link.src} className={"myContactsIcon"}>
-      {link.name==="github" ? <GitHubIcon color="primary" style={{ fontSize: 75 }}/>:''}
-      {link.name==="telegram" ? <TelegramIcon color="secondary" style={{ fontSize: 75 }}/>:''}
-      {link.name==="gmail" ? <MailIcon  style={{ fontSize: 75 }}/>:''}
-      {link.name==="linkedin" ? <LinkedInIcon style={{ fontSize: 75 }}/>:''}
+      {link.name === "github" ? <GitHubIcon color="primary" style={{ fontSize: 75 }}/>:''}
+      {link.name === "telegram" ? <TelegramIcon color="secondary" style={{ fontSize: 75 }}/>:''}
+      {link.name === "gmail" ? <MailIcon  style={{ fontSize: 75, color:"purple" }}/>:''}
+      {link.name === "linkedin" ? <LinkedInIcon style={{ fontSize: 75 }}/>:''}
         </a>
       ))}
       </Grid>

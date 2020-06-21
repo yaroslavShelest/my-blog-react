@@ -1,13 +1,17 @@
 import React from "react";
 import ReactHowler from "react-howler";
-import Container from "@material-ui/core/Container";
+import { withStyles } from "@material-ui/styles";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import PlayerPanel from "./PlayerPanel";
 import StationsList from "./StationsList";
 import HeadlineSection from "../../Common/HeadlineSection";
 
-export default class AudioPlayerWithHowler extends React.Component {
+const styles = (theme) => ({
+  rootMovedCont: { position: "relative", transform: `translate(0px, -130px)` },
+});
+
+class AudioPlayerWithHowler extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -15,7 +19,7 @@ export default class AudioPlayerWithHowler extends React.Component {
       loaded: false,
       playing: false,
       mute: false,
-      volume: 1.0,  
+      volume: 1.0,
 
       stations: this.props.stations,
       currentStation: {
@@ -27,11 +31,11 @@ export default class AudioPlayerWithHowler extends React.Component {
     };
   }
 
-  onChangeVolume = (event, newValue) => {  
+  onChangeVolume = (event, newValue) => {
     this.setState({ volume: newValue });
   };
 
-  handleSwapToNextWithId = (event,id) => {
+  handleSwapToNextWithId = (event, id) => {
     if (this.state.stations.length > this.state.currentStation.id) {
       this.handleStop();
       const nextStation = this.state.stations.find(
@@ -41,7 +45,7 @@ export default class AudioPlayerWithHowler extends React.Component {
         "this.state.currentStation БЫЛО",
         this.state.currentStation,
         "nextStation СТАЛО",
-        nextStation,
+        nextStation
       );
       this.setState({ currentStation: nextStation });
       this.handleOnPlay();
@@ -57,7 +61,7 @@ export default class AudioPlayerWithHowler extends React.Component {
         "this.state.currentStation БЫЛО",
         this.state.currentStation,
         "nextStation СТАЛО",
-        nextStation,
+        nextStation
       );
       this.setState({ currentStation: nextStation });
       this.handleOnPlay();
@@ -74,7 +78,7 @@ export default class AudioPlayerWithHowler extends React.Component {
         "this.state.currentStation БЫЛО",
         this.state.currentStation,
         "previusStation СТАЛО",
-        previusStation,
+        previusStation
       );
       this.setState({ currentStation: previusStation });
       this.handleOnPlay();
@@ -114,45 +118,59 @@ export default class AudioPlayerWithHowler extends React.Component {
 
   handleMuteToggle = () => {
     this.setState({
-      mute: !this.state.mute
-    })
-  }
+      mute: !this.state.mute,
+    });
+  };
 
   render() {
+    const { classes } = this.props;
     return (
       <React.Fragment>
-        <HeadlineSection headlineText="rest with music!" />
-        <Grid>
-          <ReactHowler
-            src={this.state.currentStation.src}
-            playing={this.state.playing}
-            preload={this.state.preload}
-            html5={true}
-            volume={this.state.volume}
-            mute={this.state.mute}
-            onLoad={this.handleOnLoaded}
-            onPlay={this.handleOnPlay}
-            onEnd={this.handleOnEnd}
-            ref={(ref) => (this.player = ref)}
-          />
-          <Grid container justify="center" align="center" direction="row" align="center" >
-            <Grid item>
-              <Box my={5}>
-                <PlayerPanel
-                  handleSwapToNext={this.handleSwapToNext}
-                  handleSwapToPrevius={this.handleSwapToPrevius}
-                  handleToggle={this.handleToggle}
-                  handleMuteToggle={this.handleMuteToggle}
-                  playing={this.state.playing}
-                  onChangeVolume={this.onChangeVolume}
-                  {...this.state}
-                />
-              </Box>
-            </Grid>
-            <Grid item>
-            <Box my={5} ml={2}>
-                <StationsList handleSwapToNextWithId={this.handleSwapToNextWithId} {...this.state}/>
-            </Box>
+        <Grid container direction="column" className={classes.rootMovedCont}>
+          <Grid  item>
+            <HeadlineSection headlineText="rest with music!" />
+          </Grid>
+          <Grid item >
+            <ReactHowler
+              src={this.state.currentStation.src}
+              playing={this.state.playing}
+              preload={this.state.preload}
+              html5={true}
+              volume={this.state.volume}
+              mute={this.state.mute}
+              onLoad={this.handleOnLoaded}
+              onPlay={this.handleOnPlay}
+              onEnd={this.handleOnEnd}
+              ref={(ref) => (this.player = ref)}
+            />
+            <Grid
+              container
+              justify="center"
+              align="center"
+              direction="row"
+              align="center"
+            >
+              <Grid item>
+                <Box my={5}>
+                  <PlayerPanel
+                    handleSwapToNext={this.handleSwapToNext}
+                    handleSwapToPrevius={this.handleSwapToPrevius}
+                    handleToggle={this.handleToggle}
+                    handleMuteToggle={this.handleMuteToggle}
+                    playing={this.state.playing}
+                    onChangeVolume={this.onChangeVolume}
+                    {...this.state}
+                  />
+                </Box>
+              </Grid>
+              <Grid item>
+                <Box my={5} ml={2}>
+                  <StationsList
+                    handleSwapToNextWithId={this.handleSwapToNextWithId}
+                    {...this.state}
+                  />
+                </Box>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
@@ -160,3 +178,5 @@ export default class AudioPlayerWithHowler extends React.Component {
     );
   }
 }
+
+export default withStyles(styles)(AudioPlayerWithHowler);
