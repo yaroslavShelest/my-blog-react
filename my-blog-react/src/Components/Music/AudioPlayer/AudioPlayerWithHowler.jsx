@@ -58,6 +58,7 @@ class AudioPlayerWithHowler extends React.Component {
         (station) => station.id === this.state.currentStation.id + 1
       );
       console.log(
+        
         "this.state.currentStation БЫЛО",
         this.state.currentStation,
         "nextStation СТАЛО",

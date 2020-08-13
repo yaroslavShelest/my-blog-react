@@ -19,7 +19,7 @@ const initialState = {
           // { title:'Languages',mainLogo: earthImg, description: "Eanglish pre-intermidiate" },
         ],
         aboutMeFew: "I'm front end developer",
-        aboutMeDescription: "I'm enjoing to develop on 1C and keen on php, I hope wordpress will save our world and opencart didn't try to complain about it state of assotiation. I have 3 yeas and a long dick to fucking sales managers",
+        aboutMeDescription: "I'm enjoing to develop on 1C and keen on php, I hope wordpress will save our world and opencart didn't try to complain about it state of assotiation. I have a great desire to learn new approaches and techniques for writing code in js, ts, dart",
         hasFindWork: true,
 };
 

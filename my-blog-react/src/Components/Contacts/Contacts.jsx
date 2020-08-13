@@ -2,6 +2,8 @@ import React from "react";
 import { lighten, makeStyles, withStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
+import Snackbar from '@material-ui/core/Snackbar';
+import Slide from '@material-ui/core/Slide';
 import TextField from "@material-ui/core/TextField";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import HeadlineSection from "../Common/HeadlineSection";
@@ -11,7 +13,8 @@ import Map from "./StepperWithMap/Map";
 import MyLinksWithLogos from "./StepperWithMap/MyLinksWithLogos";
 import Icon from '@material-ui/core/Icon';
 import Button from '@material-ui/core/Button';
-import * as emailjs from 'emailjs-com'
+import DirectionSnackbar from './DirectionSnackbar';
+import * as emailjs from 'emailjs-com';
 
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
@@ -53,12 +56,23 @@ const useStyles = makeStyles((theme) => ({
  
 }));
 
+
 export default function Contacts({ myContactsLinks, myTeachers }) {
   const classes = useStyles();
   const [name, setName] = React.useState();
   const [email, setEmail] = React.useState();
   const [subject, setSubject] = React.useState();
   const [msg, setMsg] = React.useState();
+  const [openSnack, setOpenSnack] = React.useState(false);
+
+  const handleClickSnack = () => {
+    setOpenSnack(true);
+  };
+
+  const handleCloseSnack = () => {
+    setOpenSnack(false);
+  };
+
 
   const onNameChange = (event) => {
     setName(event.target.value);
@@ -87,7 +101,8 @@ export default function Contacts({ myContactsLinks, myTeachers }) {
        templateParams,
       'user_DCkljnnO831QLbSuFwNkp'
      )
-    resetForm()
+     handleClickSnack();
+    resetForm();
   };
   const resetForm = () => {
     setName("");
@@ -200,9 +215,11 @@ export default function Contacts({ myContactsLinks, myTeachers }) {
       </Button>
       </div>
           </form>
+          
             </Grid>
         </Grid>
       </Grid>
+      <DirectionSnackbar handleCloseSnack={handleCloseSnack} openSnack={openSnack}   />
     </Box>
   );
 }
