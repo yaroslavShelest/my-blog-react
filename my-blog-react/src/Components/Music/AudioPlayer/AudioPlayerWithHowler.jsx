@@ -41,12 +41,6 @@ class AudioPlayerWithHowler extends React.Component {
       const nextStation = this.state.stations.find(
         (station) => station.id === +id
       );
-      console.log(
-        "this.state.currentStation БЫЛО",
-        this.state.currentStation,
-        "nextStation СТАЛО",
-        nextStation
-      );
       this.setState({ currentStation: nextStation });
       this.handleOnPlay();
     }
@@ -56,13 +50,6 @@ class AudioPlayerWithHowler extends React.Component {
       this.handleStop();
       const nextStation = this.state.stations.find(
         (station) => station.id === this.state.currentStation.id + 1
-      );
-      console.log(
-        
-        "this.state.currentStation БЫЛО",
-        this.state.currentStation,
-        "nextStation СТАЛО",
-        nextStation
       );
       this.setState({ currentStation: nextStation });
       this.handleOnPlay();
@@ -74,12 +61,6 @@ class AudioPlayerWithHowler extends React.Component {
       this.handleStop();
       const previusStation = this.state.stations.find(
         (station) => station.id === this.state.currentStation.id - 1
-      );
-      console.log(
-        "this.state.currentStation БЫЛО",
-        this.state.currentStation,
-        "previusStation СТАЛО",
-        previusStation
       );
       this.setState({ currentStation: previusStation });
       this.handleOnPlay();

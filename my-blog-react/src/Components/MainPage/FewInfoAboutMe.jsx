@@ -21,6 +21,12 @@ const useStyles = makeStyles((theme) => ({
     maxHeight: "200px",
     boxSizing: "border-box",
   },
+  mainPhotoContainerForMobile: {
+    margin: "8px",
+    width: "150px",
+    maxHeight: "150px",
+    boxSizing: "border-box",
+  },
   mainTextContainer: {
     margin: "12px",
   },
@@ -101,7 +107,11 @@ const useStyles = makeStyles((theme) => ({
   aboutMeDesc: {
     font: `bold 34px/55px Helvetica, Sans-Serif`,
     color: "white"
-  }
+  },
+  aboutMeDescForMobile: {
+    font: `bold 24px/35px Helvetica, Sans-Serif`,
+    color: "white"
+  },
 }));
 
 export default function FewInfoAboutMe({
@@ -111,14 +121,15 @@ export default function FewInfoAboutMe({
 }) {
   const classes = useStyles();
   const matchesMaxW600 = useMediaQuery('(max-width:600px)');
+  const matchesMaxW425 = useMediaQuery('(max-width:425px)');
 
 
   return (
     <Slide direction="left" in={true}>
       <Paper className={classes.paper}>
         <Grid container direction="row-reverse" wrap={matchesMaxW600 ? {} : "nowrap"} style={{'justifyContent': 'center'}}>
-          <Grid item xs={6}>
-          <Box className={classes.mainPhotoContainer}>
+          <Grid item xs={matchesMaxW425 ? '' : 6}>
+          <Box className={matchesMaxW425 ? classes.mainPhotoContainerForMobile : classes.mainPhotoContainer}>
               <img src={image} alt={"404"} className={classes.mainPhoto} />
           </Box>
           </Grid>
@@ -129,7 +140,7 @@ export default function FewInfoAboutMe({
               </Typography>
             </Box>
               <Box className={classes.mainTextContainer}>
-                <Typography variant="h6" className={classes.aboutMeDesc}>{aboutMeDescription}</Typography>
+                <Typography variant="h6" className={matchesMaxW425? classes.aboutMeDescForMobile : classes.aboutMeDesc}>{aboutMeDescription}</Typography>
               </Box>
           </Grid>
         </Grid>

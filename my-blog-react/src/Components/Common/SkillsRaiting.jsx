@@ -11,6 +11,7 @@ import ExpansionPanel from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelSummary from '@material-ui/core/ExpansionPanelSummary';
 import ExpansionPanelDetails from '@material-ui/core/ExpansionPanelDetails';
 import ImportExport from '@material-ui/icons/ImportExport';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import sword from './../../Assets/logo/starSword.png';
 import kauloRenImg from './../../Assets/devidersForSections/renKaulo.png';
 import defenderImg from './../../Assets/devidersForSections/defender.png';
@@ -28,11 +29,17 @@ const useStyles = makeStyles({
   },
   mainLogo: {
     width: "80px",
-    higth: "80px",
+    height: "80px",
+  },
+  mailLogoForMobile: {
+    width: "40px",
+    height: "40px",
   },
   swordLogo: {
     maxWidth: "300px",
-    higth: "100%",
+  },
+  swordLogoForMobile: {
+    maxWidth: "100px",
   },
   paperSkills: {
     boxShadow: "none",
@@ -48,12 +55,13 @@ const useStyles = makeStyles({
 
 export default function SkillsRaiting({ skills }) {
   const classes = useStyles();
+  const matchesMaxW425 = useMediaQuery('(max-width:425px)');
 
   return (
     <Grid container direction="row" justify="space-between">
-      <Grid item>
+     {matchesMaxW425 ? null : <Grid item>
       <img src={kauloRenImg} alt={"404"}  />
-      </Grid>
+      </Grid>}
       <Grid item className={classes.item}>
     <Paper className={classes.paperSkills}> 
       {skills.map((skill, index) => (
@@ -64,8 +72,8 @@ export default function SkillsRaiting({ skills }) {
           id="panel1a-header"
         >
           <Grid className={classes.mainLogoContainer}>
-            <img className={classes.swordLogo} src={sword} />
-            <img className={classes.mainLogo} src={skill.mainLogo} />
+            <img className={matchesMaxW425 ? classes.swordLogoForMobile : classes.swordLogo} src={sword} />
+            <img className={matchesMaxW425 ? classes.mailLogoForMobile :classes.mainLogo} src={skill.mainLogo} />
           </Grid>
         </ExpansionPanelSummary>
         <ExpansionPanelDetails>
@@ -77,9 +85,9 @@ export default function SkillsRaiting({ skills }) {
       ))}
     </Paper>
     </Grid>
-    <Grid item>
+   { matchesMaxW425 ? null : <Grid item>
     <img src={defenderImg} alt={"404"}  />
-      </Grid>
+      </Grid>}
     </Grid>
   );
 }

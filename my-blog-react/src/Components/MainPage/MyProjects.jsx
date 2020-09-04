@@ -52,6 +52,41 @@ const themeMyProjects = {
               marginLeft: -muiBaseTheme.spacing.unit
             }
           }
+        },
+        "&.MuiEngagementCard--01--Mobile": {
+          transition: "0.3s",
+          width: 200,
+          margin: "auto",
+          boxShadow: "0 8px 40px -12px rgba(0,0,0,0.3)",
+          "&:hover": {
+            boxShadow: "0 16px 70px -12.125px rgba(0,0,0,0.3)",
+          },
+          "& .MuiCardMedia-root": {
+            paddingTop: "56.25%",
+          },
+          "& .imageProsto": {
+            paddingTop: "56.25%",
+          },
+          "& .MuiCardContent-root": {
+            textAlign: "left",
+            padding: muiBaseTheme.spacing.unit * 3
+          },
+          "& .MuiDivider-root": {
+            margin: `${muiBaseTheme.spacing.unit * 3}px 0`
+          },
+          "& .MuiTypography--heading": {
+            fontWeight: "bold"
+          },
+          "& .MuiTypography--subheading": {
+            lineHeight: 1.8
+          },
+          "& .MuiAvatar-root": {
+            display: "inline-block",
+            border: "2px solid white",
+            "&:not(:first-of-type)": {
+              marginLeft: -muiBaseTheme.spacing.unit
+            }
+          }
         }
       }
     }
@@ -65,6 +100,7 @@ export default function MyProjects({projects}) {
   }
 
   const matchesMaxW600 = useMediaQuery('(max-width:600px)');
+  const matchesMaxW425 = useMediaQuery('(max-width:425px)');
 
   return (
       <MuiThemeProvider theme={createMuiTheme(themeMyProjects)}>
@@ -72,7 +108,7 @@ export default function MyProjects({projects}) {
           {projects.map((project, index) => (
             <Grid item  >
         <div>
-          <Card className={"MuiEngagementCard--01"}>
+          <Card className={matchesMaxW425 ? "MuiEngagementCard--01--Mobile" : "MuiEngagementCard--01"}>
             <CardActionArea onClick={()=> openSources(project.githubUrl)}>
             <CardMedia
               image={

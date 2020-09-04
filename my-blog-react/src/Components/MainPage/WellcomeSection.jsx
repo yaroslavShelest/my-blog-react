@@ -39,6 +39,9 @@ const useStyles = makeStyles(theme => ({
   dartSpacer: {
     padding	: "0 2px",
   },
+  dartSpacerForMobile: {
+    padding	: "0 1px",
+  },
   dartPhoto: {
     maxHeight: "560px",
     maxWidth: "1232px",
@@ -52,6 +55,7 @@ const useStyles = makeStyles(theme => ({
 export default function WellcomeSection(props) {
   const classes = useStyles();
   const matchesMaxW600 = useMediaQuery('(max-width:600px)');
+  // const matchesMaxW425 = useMediaQuery('(max-width:425px)');
 
   return (<React.Fragment>
         <Box className={classes.dartContainer}>

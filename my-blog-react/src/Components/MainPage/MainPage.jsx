@@ -37,6 +37,7 @@ const useStyles = makeStyles(theme => ({
 export default function MainPage(props) {
   const classes = useStyles();
   const matchesMaxW600 = useMediaQuery('(max-width:600px)');
+  const matchesMaxW425 = useMediaQuery('(max-width:425px)');
 
   return (
     <Box>

@@ -1,5 +1,5 @@
 import React from "react";
-import { lighten, makeStyles, withStyles } from "@material-ui/core/styles";
+import { lighten, makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 import Snackbar from '@material-ui/core/Snackbar';
@@ -59,6 +59,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Contacts({ myContactsLinks, myTeachers }) {
   const classes = useStyles();
+  // const matchesMaxW425 = useMediaQuery('(max-width:425px)');
   const [name, setName] = React.useState();
   const [email, setEmail] = React.useState();
   const [subject, setSubject] = React.useState();
@@ -76,7 +77,6 @@ export default function Contacts({ myContactsLinks, myTeachers }) {
 
   const onNameChange = (event) => {
     setName(event.target.value);
-    console.log(event.target.value)
   };
   const onEmailChange = (event) => {
     setEmail(event.target.value);
