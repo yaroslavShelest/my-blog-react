@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-// dddd
+import Container from '@material-ui/core/Container';
+import Box from '@material-ui/core/Box';
+import Routes from './routes';
+import HeaderContainer from './Containers/HeaderContainer';
+import FooterContainer from './Containers/FooterContainer';
+import {withGlobalFont} from './hoc/withGlobalFont';
+
+
 function App() {
+
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+    <React.Fragment>
+      <Box className={"mainBackground"}>
+      <Container maxWidth="lg" style={{flex: "1 0 auto"}}>
+        <HeaderContainer/>
+
+
+        <main>
+          <Routes />
+        </main>
+
+
+      </Container>
+      
+      <FooterContainer  title="Thanks for wathcing" description="Star application version 1" />
+      </Box>
+    </React.Fragment>
   );
 }
 
-export default App;
+export default withGlobalFont(App);
