@@ -7,12 +7,8 @@ import Link from '@material-ui/core/Link';
 function Copyright() {
   return (
     <Typography variant="body2"  align="center">
-      {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>
-      {new Date().getFullYear()}
-      {'.'}
+      {'Ukraine, Dnepropetrovsk | '}
+       {'alexxldub@gmail.com'}
     </Typography>
   );
 }
@@ -40,6 +36,9 @@ export default function Footer(props) {
         </Typography>
         <Typography variant="subtitle1" align="center"  component="p">
           {description}
+          {' | '}
+          {new Date().getFullYear()}
+      {' year'}
         </Typography>
         <Copyright />
       </Container>

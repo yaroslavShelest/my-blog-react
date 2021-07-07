@@ -25,7 +25,7 @@ function App() {
 
       </Container>
       
-      <FooterContainer  title="Thanks for wathcing" description="Something here to give the footer a purpose!" />
+      <FooterContainer  title="Thanks for wathcing" description="Star application version 1" />
       </Box>
     </React.Fragment>
   );

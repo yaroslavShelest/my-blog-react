@@ -12,7 +12,8 @@ import MyLinksWithLogos from "./StepperWithMap/MyLinksWithLogos";
 const useStyles = makeStyles((theme) => ({
   mainGrid: {
     marginTop: theme.spacing(3),
-    padding: theme.spacing(5)
+    padding: theme.spacing(5),
+    position: "relative", transform: `translate(0px, -205px)` 
   },
   contactsText: {
     color: "white"
